@@ -21,3 +21,4 @@ window.util = (function () {
     }
   }
 })();
+

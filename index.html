@@ -10,7 +10,46 @@
 <body class="homepage">
   <div class="page-wrapper">
     <div class="homepage__screen">
-      @@include('blocks/page-header.html')
+      <header class="page-header">
+        <div class="page-header__inner">
+          <a class="page-header__logo logo" href="index.html">
+            <img class="page-header__logo-image logo__image" src="images/logo-page.png" alt="Логотип сервиса доставки полезной еды «ЕшьХудей»">
+          </a>
+
+          <div class="page-header__social social">
+            <p class="social__text visuallyhidden">Всегда актуальное меню в наших группах в соц. сетях:</p>
+            <ul class="social__list">
+              <li class="social__item">
+                <a class="social__link" href="">
+                  <svg class="social__icon" width="24" height="24">
+                    <use xlink:href="images/symbols.svg#soc-facebook"></use>
+                  </svg>
+                  <span class="social__caption">ЕшьХудей в Instagram</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="">
+                  <svg class="social__icon" width="24" height="24">
+                    <use xlink:href="images/symbols.svg#soc-vk"></use>
+                  </svg>
+                  <span class="social__caption">ЕшьХудей во Вконтакте</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="">
+                  <svg class="social__icon" width="24" height="24">
+                    <use xlink:href="images/symbols.svg#soc-instagram"></use>
+                  </svg>
+                  <span class="social__caption">ЕшьХудей в Facebook</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <a class="page-header__phone page-phone" href="tel:+7 (4832) 424 004">+7 (4832) <span>424 004</span></a>
+        </div>
+      </header>
+
 
       <section class="welcome">
         <div class="welcome__inner">
@@ -788,10 +827,202 @@
       </section>
     </main>
 
-    @@include('blocks/page-footer.html')
+    <footer class="page-footer">
+      <div class="page-footer__frame page-footer__frame--top">
+        <div class="page-footer__inner">
+
+          <a class="page-footer__logo logo" href="index.html">
+            <img class="page-footer__logo-image logo__image" src="images/logo-page.png" alt="Логотип сервиса доставки полезной еды «ЕшьХудей»">
+          </a>
+
+          <div class="page-footer__social social">
+            <p class="social__text visuallyhidden">Всегда актуальное меню в наших группах в соц. сетях:</p>
+            <ul class="social__list">
+              <li class="social__item">
+                <a class="social__link" href="">
+                  <svg class="social__icon" width="24" height="24">
+                    <use xlink:href="images/symbols.svg#soc-facebook"></use>
+                  </svg>
+                  <span class="social__caption">ЕшьХудей в Instagram</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="">
+                  <svg class="social__icon" width="24" height="24">
+                    <use xlink:href="images/symbols.svg#soc-vk"></use>
+                  </svg>
+                  <span class="social__caption">ЕшьХудей во Вконтакте</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="">
+                  <svg class="social__icon" width="24" height="24">
+                    <use xlink:href="images/symbols.svg#soc-instagram"></use>
+                  </svg>
+                  <span class="social__caption">ЕшьХудей в Facebook</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <a class="page-footer__phone page-phone" href="tel:+7 (4832) 424 004">+7 (4832) <span>424 004</span></a>
+        </div>
+      </div>
+      <div class="page-footer__frame page-footer__frame--bottom">
+        <div class="page-footer__inner">
+          <p class="page-footer__copy">© ЕшьХудей32.рф, 2018</p>
+          <p class="page-footer__developer">Проект разработан <br> в <a href="https://01group.ru/">digital-агентстве «01 Групп»</a></p>
+        </div>
+      </div>
+    </footer>
+
   </div>
 
-  @@include('blocks/popup-calculator.html')
-  @@include('blocks/site-scripts.html')
+  <div class="popup-calculator popup" id="popup-calculator">
+    <div class="popup__container">
+      <button class="popup__close" type="button">Закрыть попап</button>
+    </div>
+    <div class="popup-calculator__body popup__body popup__container">
+      <form class="form-profile" action="" method="POST">
+        <fieldset class="form-section">
+          <legend class="form-section__header">
+            <h2 class="form-section__title">Укажите пол</h2>
+          </legend>
+          <div class="radioboxes-list">
+            <label class="radioboxes-list__item radiobox">
+              <input class="radiobox__input" type="radio" name="gender" value="male" data-profile-role="control" checked>
+              <span class="radiobox__indicator">
+                <svg class="radiobox__icon" width="25" height="25">
+                  <use xlink:href="images/symbols.svg#male-avatar-circle"></use>
+                </svg>
+                <span class="radiobox__text">мужской</span>
+              </span>
+            </label>
+            <label class="radioboxes-list__item radiobox">
+              <input class="radiobox__input" type="radio" name="gender" value="female" data-profile-role="control">
+              <span class="radiobox__indicator">
+                <svg class="radiobox__icon" width="25" height="25">
+                  <use xlink:href="images/symbols.svg#people"></use>
+                </svg>
+                <span class="radiobox__text">женский</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="form-section">
+          <legend class="form-section__header">
+            <h2 class="form-section__title">К каким результатам стремитесь?</h2>
+          </legend>
+          <div class="radioboxes-list">
+            <label class="radioboxes-list__item radiobox">
+              <input class="radiobox__input" type="radio" name="targetPerson" value="slim" data-profile-role="control">
+              <span class="radiobox__indicator">
+                <svg class="radiobox__icon" width="25" height="25">
+                  <use xlink:href="images/symbols.svg#waist"></use>
+                </svg>
+                <span class="radiobox__text">похудение</span>
+              </span>
+            </label>
+            <label class="radioboxes-list__item radiobox">
+              <input class="radiobox__input" type="radio" name="targetPerson" value="muscle" data-profile-role="control" checked>
+              <span class="radiobox__indicator">
+                <svg class="radiobox__icon" width="25" height="25">
+                  <use xlink:href="images/symbols.svg#dumbbell"></use>
+                </svg>
+                <span class="radiobox__text">рост мышечной массы</span>
+              </span>
+            </label>
+            <label class="radioboxes-list__item radiobox">
+              <input class="radiobox__input" type="radio" name="targetPerson" value="tone" data-profile-role="control">
+              <span class="radiobox__indicator">
+                <svg class="radiobox__icon" width="25" height="25">
+                  <use xlink:href="images/symbols.svg#scales"></use>
+                </svg>
+                <span class="radiobox__text">поддержание формы</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="form-section">
+          <legend class="form-section__header">
+            <h2 class="form-section__title">Ваши индивидуальные параметры</h2>
+          </legend>
+          <div class="fields-list">
+            <label class="fields-list__item form-field">
+              <span class="form-field__text">Вес, кг</span>
+              <input class="form-field__control form-field__control--individual form-control" type="number" name="weight" min="0" maxlength="3" placeholder="——" data-profile-role="control" required>
+            </label>
+            <label class="fields-list__item form-field">
+              <span class="form-field__text">Рост, см</span>
+              <input class="form-field__control form-field__control--individual form-control" type="number" name="height" min="0" maxlength="3" placeholder="——" data-profile-role="control" required>
+            </label>
+            <label class="fields-list__item form-field">
+              <span class="form-field__text">Возраст, лет</span>
+              <input class="form-field__control form-field__control--individual form-control" type="number" name="age" min="0" maxlength="3" placeholder="——" data-profile-role="control" required>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="form-section">
+          <legend class="form-section__header">
+            <h2 class="form-section__title">Уровень активности</h2>
+          </legend>
+          <div class="radioboxes-group-list-activity">
+            <div class="radioboxes-list radioboxes-list-activity">
+              <label class="radioboxes-list__item radioboxes-list-activity__item radiobox">
+                <input class="radiobox__input" type="radio" name="activity" value="1.2" data-profile-role="control" checked>
+                <span class="radiobox__indicator">
+                  <span class="radiobox__text">сидячий образ жизни</span>
+                </span>
+              </label>
+              <label class="radioboxes-list__item radioboxes-list-activity__item radiobox">
+                <input class="radiobox__input" type="radio" name="activity" value="1.375" data-profile-role="control">
+                <span class="radiobox__indicator">
+                  <span class="radiobox__text">средняя активность</span>
+                </span>
+                <span class="radiobox__note">легкие упражнения 1-3 раза в неделю</span>
+              </label>
+              <label class="radioboxes-list__item radioboxes-list-activity__item radiobox">
+                <input class="radiobox__input" type="radio" name="activity" value="1.4625" data-profile-role="control">
+                <span class="radiobox__indicator">
+                  <span class="radiobox__text">повышенная активность</span>
+                </span>
+                <span class="radiobox__note">активные тренировки 3-5 раз в неделю</span>
+              </label>
+            </div>
+            <div class="radioboxes-list radioboxes-list-activity radioboxes-list-activity--stub">
+              <label class="radioboxes-list__item radioboxes-list-activity__item radiobox">
+                <input class="radiobox__input" type="radio" name="activity" value="1.550" data-profile-role="control">
+                <span class="radiobox__indicator">
+                  <span class="radiobox__text">очень высокая активность</span>
+                </span>
+                <span class="radiobox__note">тяжелые физические нагрузки 6-7 раз в неделю</span>
+              </label>
+              <label class="radioboxes-list__item radioboxes-list-activity__item radiobox">
+                <input class="radiobox__input" type="radio" name="activity" value="1.6375" data-profile-role="control">
+                <span class="radiobox__indicator">
+                  <span class="radiobox__text">экстремальная активность</span>
+                </span>
+                <span class="radiobox__note">занятия интенсивным тренингом 2 раза в день</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-profile__output">
+          <span class="form-profile__output-text">Ваша дневная норма калорий</span>
+          <span class="form-profile__output-value" data-profile-role="output"></span>
+          ккал/день
+        </div>
+        <div class="form-profile__submit-wrapper">
+          <button class="form-profile__submit landing-button-action" type="submit"><span class="landing-button-action__text">Заказать</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/modules.js"></script>
+  <script src="js/script.js"></script>
+
 </body>
 </html>
