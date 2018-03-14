@@ -1,0 +1,9 @@
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.coming-soon-content {
+  flex-grow: 1;
+}

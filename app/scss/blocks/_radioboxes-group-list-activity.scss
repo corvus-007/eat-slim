@@ -1,0 +1,7 @@
+.radioboxes-group-list-activity {
+  @include mq-max(666px) {
+    border: 1px solid #2b3844;
+    // background-color: rgba(#9dbad8, 0.1);
+    border-radius: rem(2);
+  }
+}

@@ -1,0 +1,63 @@
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "mixins-containers";
+
+@import "normalize";
+
+// Global
+@import "global/fonts";
+// @import "global/grid";
+@import "global/base";
+@import "global/layout";
+
+// Vendors
+@import "vendors/slick";
+@import "vendors/jquery.fancybox.min";
+
+// Blocks
+@import "blocks/landing-button-action";
+@import "blocks/button-link";
+@import "blocks/form";
+@import "blocks/form-control";
+@import "blocks/fields-list";
+@import "blocks/form-field";
+@import "blocks/form-profile";
+@import "blocks/form-section";
+@import "blocks/radioboxes-list";
+@import "blocks/radioboxes-group-list-activity";
+@import "blocks/radioboxes-list-activity";
+@import "blocks/radiobox";
+// @import "blocks/table";
+@import "blocks/popup";
+// @import "blocks/section";
+// @import "blocks/custom-ol";
+// @import "blocks/custom-ul";
+@import "blocks/homepage";
+@import "blocks/homepage-section";
+// @import "blocks/coming-soon";
+// @import "blocks/company-name";
+// @import "blocks/coming-soon-header";
+// @import "blocks/coming-soon-content";
+// @import "blocks/coming-soon-welcome";
+@import "blocks/page-wrapper";
+@import "blocks/page-header";
+@import "blocks/logo";
+@import "blocks/page-phone";
+@import "blocks/social";
+@import "blocks/welcome";
+@import "blocks/how-it-work";
+@import "blocks/weekly-menu";
+@import "blocks/tariff-plans";
+@import "blocks/tariff-plan";
+@import "blocks/weekly-menu-tabs";
+@import "blocks/menu-for-day";
+@import "blocks/popup-calculator";
+@import "blocks/page-footer";
+// @import "blocks/main-nav";
+// @import "blocks/hamburger-menu";
+// @import "blocks/index-slider";
+// @import "blocks/page";
+// @import "blocks/archive-events";
+// @import "blocks/main-footer";
+// @import "blocks/socials";

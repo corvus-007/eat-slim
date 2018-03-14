@@ -1,0 +1,25 @@
+.radioboxes-list-activity {
+  @include mq-max(667px) {
+    border: none;
+  }
+
+  @include mq-min(667px) {
+    display: flex;
+    margin-bottom: rem(42);
+
+    &--stub {
+      margin-left: auto;
+      width: calc(100% / 3 * 2);
+    }
+  }
+}
+
+.radioboxes-list-activity__item {
+  @include mq-min(667px) {
+    width: calc(100% / 3 - 0.1px);
+
+    .radioboxes-list-activity--stub & {
+      width: 50%;
+    }
+  }
+}

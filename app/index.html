@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Главная — ЕшьХудей</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="homepage">
+  <div class="page-wrapper">
+    <div class="homepage__screen">
+      @@include('blocks/page-header.html')
+
+      <section class="welcome">
+        <div class="welcome__inner">
+          <div class="welcome__dish"></div>
+          <div class="welcome__body">
+            <h1 class="welcome__title">
+              Полезная <br> еда
+              <span class="welcome__title-small">
+                с доставкой <br> на дом
+              </span>
+            </h1>
+            <p class="welcome__subtitle">от <span>90 руб.</span> за порцию</p>
+            <div class="welcome__text">
+              <p>Меню разработано опытными поварами совместно с экспертами по питанию. Разнообразное меню каждую неделю, в том числе и десертов.</p>
+            </div>
+            <div class="welcome__actions">
+              <a class="welcome__to-choose-tariff landing-button-action" href="#tariff-plans">
+                <span class="landing-button-action__text">Выберите тариф</span>
+              </a>
+              <button class="welcome__to-calc button-link" type="button" data-popup-target="#popup-calculator">Калькулятор калорий</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <main class="page-content">
+      <section class="homepage-section how-it-work">
+        <div class="how-it-work__inner">
+          <h2 class="homepage-section__title">Как это работает</h2>
+          <ol class="how-it-work__list">
+            <li class="how-it-work__item">
+              <div class="how-it-work__scale">
+                <svg class="how-it-work__icon" width="60" height="60">
+                  <use xlink:href="images/symbols.svg#check"></use>
+                </svg>
+              </div>
+              <h3 class="how-it-work__caption">Вы выбираете программу питания</h3>
+              <div class="how-it-work__description">
+                <p>Мы проработали несколько программ питания, которые отличаются калорийностью и соотношением БЖУ.</p>
+              </div>
+            </li>
+            <li class="how-it-work__item">
+              <div class="how-it-work__scale">
+                <svg class="how-it-work__icon" width="60" height="60">
+                  <use xlink:href="images/symbols.svg#salad"></use>
+                </svg>
+              </div>
+              <h3 class="how-it-work__caption">Мы готовим еду для вас</h3>
+              <div class="how-it-work__description">
+                <p>Наш профессиональный повар использует только свежие и натуральные продукты. Никаких БАДов и ароматизаторов.</p>
+              </div>
+            </li>
+            <li class="how-it-work__item">
+              <div class="how-it-work__scale">
+                <svg class="how-it-work__icon" width="60" height="60">
+                  <use xlink:href="images/symbols.svg#transport"></use>
+                </svg>
+              </div>
+              <h3 class="how-it-work__caption">Доставляем готовую еду</h3>
+              <div class="how-it-work__description">
+                <p>Каждое блюдо в отдельной подписанной коробочке. Перепутать – невозможно!</p>
+              </div>
+            </li>
+            <li class="how-it-work__item">
+              <div class="how-it-work__scale">
+                <svg class="how-it-work__icon" width="60" height="60">
+                  <use xlink:href="images/symbols.svg#boot"></use>
+                </svg>
+              </div>
+              <h3 class="how-it-work__caption">Вы правильно питаетесь</h3>
+              <div class="how-it-work__description">
+                <p>Походы в магазин, приготовление еды, мытье посуды – всё это время теперь можете посвятить себе!</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="homepage-section weekly-menu">
+        <div class="weekly-menu__inner">
+          <h2 class="homepage-section__title">Наше меню на неделю</h2>
+          <div class='weekly-menu-tabs'>
+            <ul class='weekly-menu-tabs__menu'>
+              <li class="weekly-menu-tabs__menu-item">
+                <a class="weekly-menu-tabs__menu-link" href="#day-1">Понедельник</a>
+              </li>
+              <li class="weekly-menu-tabs__menu-item">
+                <a class="weekly-menu-tabs__menu-link" href="#day-2">Вторник</a>
+              </li>
+              <li class="weekly-menu-tabs__menu-item">
+                <a class="weekly-menu-tabs__menu-link" href="#day-3">Среда</a>
+              </li>
+              <li class="weekly-menu-tabs__menu-item">
+                <a class="weekly-menu-tabs__menu-link" href="#day-4">Четверг</a>
+              </li>
+              <li class="weekly-menu-tabs__menu-item">
+                <a class="weekly-menu-tabs__menu-link" href="#day-5">Пятница</a>
+              </li>
+              <li class="weekly-menu-tabs__menu-item">
+                <a class="weekly-menu-tabs__menu-link" href="#day-6">Суббота</a>
+              </li>
+              <li class="weekly-menu-tabs__menu-item">
+                <a class="weekly-menu-tabs__menu-link" href="#day-7">Воскресенье</a>
+              </li>
+            </ul>
+            <div class="weekly-menu-tabs__pane" id="day-1">
+              <div class="menu-for-day">
+                <ul class="menu-for-day__list">
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/005792/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Салат из тунца с яйцом, оливками и перцем</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/6C567B/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Рулет из камбалы на пару с семгой и булгуром</b>
+                      <ul class="menu-for-day__info">
+                        <li>200 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/F67280/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Лосось запеченый с салатом чукка</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/086972/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Овощной микс с булгуром</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/4D4545/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Салат из огруцов и помидоров с сыром</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <div class="menu-for-day__footer">
+                  <div class="menu-for-day__total">
+                    <p class="menu-for-day__total-info">Итого: 1650 гр., 1800 ккал</p>
+                    <ul class="menu-for-day__total-bgu">
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--proteins">
+                        Белки — 16г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--fats">
+                        Жиры — 15г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--carbohydrates">
+                        Углеводы — 34г
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="weekly-menu-tabs__pane" id="day-2">
+              <div class="menu-for-day">
+                <ul class="menu-for-day__list">
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/282D4F/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Салат из тунца с яйцом, оливками и перцем</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/23103A/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Рулет из камбалы на пару с семгой и булгуром</b>
+                      <ul class="menu-for-day__info">
+                        <li>200 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/A0204C/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Лосось запеченый с салатом чукка</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/086972/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Овощной микс с булгуром</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <div class="menu-for-day__footer">
+                  <div class="menu-for-day__total">
+                    <p class="menu-for-day__total-info">Итого: 1650 гр., 1800 ккал</p>
+                    <ul class="menu-for-day__total-bgu">
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--proteins">
+                        Белки — 16г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--fats">
+                        Жиры — 15г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--carbohydrates">
+                        Углеводы — 34г
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="weekly-menu-tabs__pane" id="day-3">
+              <div class="menu-for-day">
+                <ul class="menu-for-day__list">
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/FFDD93/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Салат из тунца с яйцом, оливками и перцем</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/005E7C/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Овощной микс с булгуром</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/323232/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Салат из огруцов и помидоров с сыром</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <div class="menu-for-day__footer">
+                  <div class="menu-for-day__total">
+                    <p class="menu-for-day__total-info">Итого: 1650 гр., 1800 ккал</p>
+                    <ul class="menu-for-day__total-bgu">
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--proteins">
+                        Белки — 16г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--fats">
+                        Жиры — 15г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--carbohydrates">
+                        Углеводы — 34г
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="weekly-menu-tabs__pane" id="day-4">
+              <div class="menu-for-day">
+                <ul class="menu-for-day__list">
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/295F4E/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Салат из тунца с яйцом, оливками и перцем</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <div class="menu-for-day__footer">
+                  <div class="menu-for-day__total">
+                    <p class="menu-for-day__total-info">Итого: 1650 гр., 1800 ккал</p>
+                    <ul class="menu-for-day__total-bgu">
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--proteins">
+                        Белки — 16г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--fats">
+                        Жиры — 15г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--carbohydrates">
+                        Углеводы — 34г
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="weekly-menu-tabs__pane" id="day-5">
+              <div class="menu-for-day">
+                <ul class="menu-for-day__list">
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/624464/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Салат из тунца с яйцом, оливками и перцем</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/1CA2BB/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Лосось запеченый с салатом чукка</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <div class="menu-for-day__footer">
+                  <div class="menu-for-day__total">
+                    <p class="menu-for-day__total-info">Итого: 1650 гр., 1800 ккал</p>
+                    <ul class="menu-for-day__total-bgu">
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--proteins">
+                        Белки — 16г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--fats">
+                        Жиры — 15г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--carbohydrates">
+                        Углеводы — 34г
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="weekly-menu-tabs__pane" id="day-6">
+              <div class="menu-for-day">
+                <ul class="menu-for-day__list">
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/D02E77/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Салат из тунца с яйцом, оливками и перцем</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/BC5148/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Салат из огруцов и помидоров с сыром</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <div class="menu-for-day__footer">
+                  <div class="menu-for-day__total">
+                    <p class="menu-for-day__total-info">Итого: 1650 гр., 1800 ккал</p>
+                    <ul class="menu-for-day__total-bgu">
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--proteins">
+                        Белки — 16г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--fats">
+                        Жиры — 15г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--carbohydrates">
+                        Углеводы — 34г
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="weekly-menu-tabs__pane" id="day-7">
+              <div class="menu-for-day">
+                <ul class="menu-for-day__list">
+                  <li class="menu-for-day__item">
+                    <div class="menu-for-day__imagebox">
+                      <img class="menu-for-day__image" src="http://placehold.it/500x500/00B7C2/fff" alt="">
+                    </div>
+                    <div class="menu-for-day__body">
+                      <b class="menu-for-day__title">Салат из тунца с яйцом, оливками и перцем</b>
+                      <ul class="menu-for-day__info">
+                        <li>220 гр</li>
+                        <li>336 ккал</li>
+                      </ul>
+                      <ul class="menu-for-day__bgu">
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--proteins">
+                          <abbr title="Белки">Б</abbr>
+                          16г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--fats">
+                          <abbr title="Жиры">Ж</abbr>
+                          15г
+                        </li>
+                        <li class="menu-for-day__bgu-item menu-for-day__bgu-item--carbohydrates">
+                          <abbr title="Углеводы">У</abbr>
+                          34г
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <div class="menu-for-day__footer">
+                  <div class="menu-for-day__total">
+                    <p class="menu-for-day__total-info">Итого: 1650 гр., 1800 ккал</p>
+                    <ul class="menu-for-day__total-bgu">
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--proteins">
+                        Белки — 16г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--fats">
+                        Жиры — 15г
+                      </li>
+                      <li class="menu-for-day__total-bgu-item menu-for-day__total-bgu-item--carbohydrates">
+                        Углеводы — 34г
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="homepage-section tariff-plans" id="tariff-plans">
+        <div class="tariff-plans__inner">
+          <h2 class="homepage-section__title tariff-plans__title">Подберите свой тарифный план</h2>
+          <ul class="tariff-plans__list">
+            <li class="tariff-plans__item tariff-plan">
+              <h3 class="tariff-plan__name"><span class="tariff-plan__name-label">Тариф</span> Lite</h3>
+              <span class="tariff-plan__price">500 <span class="tariff-plan__price-currency">руб.</span></span>
+              <span class="tariff-plan__calories">1200 ккал</span>
+              <button class="tariff-plan__to-order landing-button-action" type="button">
+              <span class="landing-button-action__text tariff-plan__to-order-text">Заказать</span>
+              </button>
+            </li>
+            <li class="tariff-plans__item tariff-plan">
+              <h3 class="tariff-plan__name"><span class="tariff-plan__name-label">Тариф</span> Lite+</h3>
+              <span class="tariff-plan__price">550 <span class="tariff-plan__price-currency">руб.</span></span>
+              <span class="tariff-plan__calories">1400 ккал</span>
+              <button class="tariff-plan__to-order landing-button-action" type="button">
+              <span class="landing-button-action__text tariff-plan__to-order-text">Заказать</span>
+              </button>
+            </li>
+            <li class="tariff-plans__item tariff-plan">
+              <h3 class="tariff-plan__name"><span class="tariff-plan__name-label">Тариф</span> Fitness</h3>
+              <span class="tariff-plan__price">600 <span class="tariff-plan__price-currency">руб.</span></span>
+              <span class="tariff-plan__calories">1600 ккал</span>
+              <button class="tariff-plan__to-order landing-button-action" type="button">
+              <span class="landing-button-action__text tariff-plan__to-order-text">Заказать</span>
+              </button>
+            </li>
+            <li class="tariff-plans__item tariff-plan">
+              <h3 class="tariff-plan__name"><span class="tariff-plan__name-label">Тариф</span> Fitness+</h3>
+              <span class="tariff-plan__price">650 <span class="tariff-plan__price-currency">руб.</span></span>
+              <span class="tariff-plan__calories">1800 ккал</span>
+              <button class="tariff-plan__to-order landing-button-action" type="button">
+              <span class="landing-button-action__text tariff-plan__to-order-text">Заказать</span>
+              </button>
+            </li>
+          </ul>
+          <div class="tariff-plans__footer">
+            <div class="tariff-plans__text">Чтобы максимально точно подобрать себе тариф, который подходит именно под ваши цели, воспользуйтесь нашим калькулятором калорийности.</div>
+            <button class="tariff-plans__to-calc button-link" type="button" data-popup-target="#popup-calculator">Калькулятор калорий</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    @@include('blocks/page-footer.html')
+  </div>
+
+  @@include('blocks/popup-calculator.html')
+  @@include('blocks/site-scripts.html')
+</body>
+</html>

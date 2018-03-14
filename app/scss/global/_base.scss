@@ -1,0 +1,93 @@
+html {
+  height: 100%;
+  font-size: $font-size;
+
+  @include mq-min(1366px) {
+    font-size: $font-size * 1.1;
+  }
+
+  @include mq-min(1440px) {
+    font-size: $font-size * 1.2;
+  }
+
+  @include mq-min(1600px) {
+    font-size: $font-size * 1.3;
+  }
+
+  @include mq-min(1920px) {
+    font-size: $font-size * 1.4;
+  }
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: $primary-font;
+  font-size: 100%;
+  font-weight: 200;
+  font-style: italic;
+  line-height: 1.4;
+  background-color: #ffffff;
+  color: $base-color;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  &.is-popup-open {
+    overflow-y: hidden;
+  }
+}
+
+.container {
+  @include make-container();
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: lighten($link-color, 10%);
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0.7em;
+  margin-bottom: 0.5em;
+}
+
+h1,
+.h1 {
+  font-size: rem(32);
+}
+
+h2,
+.h2 {
+  font-size: rem(27);
+}
+
+h3,
+.h3 {
+  font-size: rem(24);
+}
+
+h4,
+.h4 {
+  font-size: rem(21);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.6em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.visuallyhidden:not(:focus):not(:active) {
+  @include visuallyhidden();
+}

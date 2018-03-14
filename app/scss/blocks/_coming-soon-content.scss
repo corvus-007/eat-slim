@@ -1,0 +1,28 @@
+.coming-soon-content {
+  @include on-make-blur('.is-popup-open');
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: rem(40);
+}
+
+.coming-soon-content__inner {
+  @include make-container();
+
+
+  @include mq-min(1024px) {
+    margin-bottom: rem(10);
+  }
+}
+
+.coming-soon-content__welcome {
+  @include mq-min(1024px) {
+    margin-left: auto;
+    width: 55%;
+  }
+
+  @include mq-min(1280px) {
+    width: 50%;
+  }
+}

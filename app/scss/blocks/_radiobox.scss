@@ -1,0 +1,89 @@
+.radiobox {
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+}
+
+.radiobox__input {
+  @include visuallyhidden();
+
+  &:hover,
+  &:focus {
+    & + .radiobox__indicator {
+      background-color: rgba(#9dbad8, 0.1);
+    }
+  }
+
+  &:checked {
+    & + .radiobox__indicator {
+      background-color: $accent-color-3;
+      color: #05101b;
+    }
+  }
+
+  &:focus {
+    & + .radiobox__indicator {
+      box-shadow: 0 0 1rem lighten($accent-color-3, 5%);
+    }
+  }
+
+  @include mq-max(666px) {
+    &:checked {
+      & ~ .radiobox__note {
+        color: #05101b;
+      }
+    }
+  }
+}
+
+.radiobox__indicator {
+  display: flex;
+  align-items: center;
+  padding: rem(15);
+  font-weight: 500;
+  font-size: rem(19);
+  color: #9dbad8;
+  border-radius: rem(2);
+  text-align: center;
+  transition: $duration * 1.5;
+
+  @include mq-min(667px) {
+    font-size: rem(15);
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+    border-radius: rem(50);
+  }
+}
+
+.radiobox__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-shrink: 0;
+  vertical-align: middle;
+  fill: currentColor;
+
+  & + .radiobox__text {
+    padding-left: rem(40);
+  }
+}
+
+.radiobox__text {
+  flex-grow: 1;
+}
+
+.radiobox__note {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  right: 0;
+  padding: 7px;
+  font-size: rem(12);
+  letter-spacing: 0.025em;
+  text-align: center;
+  pointer-events: none;
+
+  @include mq-min(667px) {
+    top: 100%;
+  }
+}

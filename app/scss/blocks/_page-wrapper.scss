@@ -1,0 +1,6 @@
+.page-wrapper {
+  @include on-make-blur('.is-popup-open');
+
+  height: inherit;
+  min-height: inherit;
+}

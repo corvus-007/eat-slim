@@ -1,0 +1,54 @@
+.tariff-plans {
+  color: #ffffff;
+  background: #182029 url("images/bg_tariff_plans.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.tariff-plans__inner {
+  @include make-container();
+}
+
+.tariff-plans__title {
+  color: #ffffff;
+}
+
+.tariff-plans__list {
+  @include clear-list();
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -$gutter;
+}
+
+.tariff-plans__item {
+  width: 100%;
+  margin-bottom: $gutter;
+
+  @include mq-range(414px, 991px) {
+    @include calc-column-width(2, $gutter);
+  }
+
+  @include mq-min(992px) {
+    @include calc-column-width(4, $gutter);
+  }
+}
+
+.tariff-plans__footer {
+  margin-top: rem(50);
+  text-align: center;
+}
+
+.tariff-plans__text {
+  @include clear-mr-edges-elem();
+
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: rem(25);
+  font-style: normal;
+  font-size: rem(15);
+}
+
+.tariff-plans__to-calc {
+
+}
