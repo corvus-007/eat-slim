@@ -14,6 +14,7 @@ var svgmin = require('gulp-svgmin');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var run = require('run-sequence');
+var ghPages = require('gulp-gh-pages');
 var del = require('del');
 
 gulp.task('style', function() {
