@@ -1,12 +1,21 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
 
   var POPUP_MODIFY_SHOW_CLASS = 'popup--open';
   var BODY_POPUP_SHOWED_CLASS = 'is-popup-open';
 
-  $('.weekly-menu-tabs').tabslet({
-    animation: true
-  });
+  $('.weekly-menu-tabs').tabslet();
+
+  if (window.matchMedia("(max-width: 991px)").matches) {
+    $('.weekly-menu-tabs').on('_after', function () {
+      $('.menu-for-day-slider').flickity('resize');
+    });
+
+    $('.menu-for-day-slider').flickity({
+      prevNextButtons: false,
+      groupCells: '75%'
+    });
+  }
 
   function showPopup(selector) {
     var popup = document.querySelector(selector);
@@ -14,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add(BODY_POPUP_SHOWED_CLASS);
     popup.classList.add(POPUP_MODIFY_SHOW_CLASS);
 
-    popupClose.addEventListener('click', function(event) {
+    popupClose.addEventListener('click', function (event) {
       event.preventDefault();
       closePopup(selector);
     });
@@ -26,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     popup.classList.remove(POPUP_MODIFY_SHOW_CLASS);
   }
 
-  $('[data-popup-target]').on('click', function(event) {
+  $('[data-popup-target]').on('click', function (event) {
     event.preventDefault();
     var popupTargetSelector = this.dataset.popupTarget;
     showPopup(popupTargetSelector);
@@ -64,12 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var resultTarget = 0;
     gender = formProfile.querySelector('input[name="gender"]:checked').value;
     personTarget = formProfile.querySelector('input[name="targetPerson"]:checked').value;
-    personWeight = formProfile.weight.value
-      ? parseFloat(formProfile.weight.value)
-      : 0;
-    personHeight = formProfile.height.value
-      ? parseFloat(formProfile.height.value)
-      : 0;
+    personWeight = formProfile.weight.value ?
+      parseFloat(formProfile.weight.value) :
+      0;
+    personHeight = formProfile.height.value ?
+      parseFloat(formProfile.height.value) :
+      0;
     personAge = formProfile.age.value ? parseFloat(formProfile.age.value) : 0;
     coeffActivity = parseFloat(formProfile.querySelector('input[name="activity"]:checked').value);
 
@@ -107,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // $(FORM_PROFILE_OUTPUT_SELECTOR).text(Math.round(calcForm()));
 
-  $(formProfile).on('change input', FORM_PROFILE_CONROLS_SELECTOR, function(
+  $(formProfile).on('change input', FORM_PROFILE_CONROLS_SELECTOR, function (
     event
   ) {
     $(FORM_PROFILE_OUTPUT_SELECTOR).text(Math.round(calcForm()));

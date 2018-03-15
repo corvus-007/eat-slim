@@ -1,0 +1,24 @@
+.menu-for-day-slider {
+  @include mq-max(991px) {
+    .flickity-slider {
+      display: flex;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.menu-for-day-slider__item {
+  @include mq-max(991px) {
+    min-height: 100%;
+    margin-left: 7px;
+    margin-right: 7px;
+    min-width: 200px;
+    max-width: 230px;
+  }
+}
