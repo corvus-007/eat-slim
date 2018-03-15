@@ -13,8 +13,9 @@
 
   &--bottom {
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: rem(12);
+    font-family: $secondary-font;
     background-color: #000000;
   }
 }
@@ -66,4 +67,8 @@
 .page-footer__developer {
   margin: 0;
   text-align: right;
+
+  a {
+    color: $accent-color-2;
+  }
 }
