@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
 
+  $('input[type="tel"]').mask('+7 (999) 999-99-99', {});
+
   var POPUP_MODIFY_SHOW_CLASS = 'popup--open';
   var BODY_POPUP_SHOWED_CLASS = 'is-popup-open';
 

@@ -481,7 +481,7 @@ body {
   font-weight: 200;
   font-style: italic;
   line-height: 1.4;
-  background-color: #ffffff;
+  background-color: #eef1ef;
   color: #232020;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -1769,20 +1769,21 @@ span.wpcf7-not-valid-tip {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: -1rem;
 }
 
 .fields-list__item {
   margin-bottom: 1rem;
-}
-
-.fields-list__item:last-child {
-  margin-bottom: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .form-field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 1rem;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -2113,10 +2114,6 @@ span.wpcf7-not-valid-tip {
   margin-left: auto;
 }
 
-.logo__image {
-  width: 100px;
-}
-
 .page-phone {
   color: #dae1e2;
   text-decoration: none;
@@ -2133,6 +2130,10 @@ span.wpcf7-not-valid-tip {
 .page-phone span {
   font-size: 1.66667rem;
   font-weight: 600;
+}
+
+.logo__image {
+  width: 100px;
 }
 
 .social {
@@ -2299,6 +2300,16 @@ span.wpcf7-not-valid-tip {
 .welcome__to-calc {
   -ms-flex-item-align: center;
       align-self: center;
+}
+
+.page-content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.how-it-work {
+  background-color: #ffffff;
 }
 
 .how-it-work__inner {
@@ -2527,6 +2538,7 @@ span.wpcf7-not-valid-tip {
   font-weight: 500;
   border: 1px solid #3d4a57;
   border-radius: 2px;
+  color: #ffffff;
   background-color: rgba(3, 13, 23, 0.4);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -3073,7 +3085,6 @@ span.wpcf7-not-valid-tip {
         flex-wrap: wrap;
   }
   .fields-list__item {
-    margin-bottom: 0;
     margin-right: 36px;
   }
   .fields-list__item:nth-child(3n) {
@@ -3391,7 +3402,7 @@ span.wpcf7-not-valid-tip {
 
 @media (min-width: 1024px) {
   .page-header {
-    padding-top: 4.44444rem;
+    padding-top: 80px;
     padding-bottom: 2.22222rem;
   }
   .page-header__phone {
