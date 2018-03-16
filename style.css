@@ -1529,9 +1529,8 @@ http://flickity.metafizzy.co
   position: relative;
   z-index: 1;
   display: inline-block;
-  vertical-align: middle;
+  min-width: 16.38889rem;
   padding: 0;
-  min-width: 295px;
   font-style: normal;
   font-weight: 500;
   font-size: 0.83333rem;
@@ -1541,10 +1540,11 @@ http://flickity.metafizzy.co
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  border: none;
-  border-radius: 2.77778rem;
+  vertical-align: middle;
   color: #ffffff;
   background: none;
+  border: none;
+  border-radius: 2.77778rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   cursor: pointer;
@@ -1949,7 +1949,7 @@ span.wpcf7-not-valid-tip {
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
@@ -2071,20 +2071,8 @@ span.wpcf7-not-valid-tip {
 }
 
 .page-wrapper {
-  -webkit-transition: -webkit-filter 0.28s 0.14s;
-  transition: -webkit-filter 0.28s 0.14s;
-  transition: filter 0.28s 0.14s;
-  transition: filter 0.28s 0.14s, -webkit-filter 0.28s 0.14s;
-  -webkit-filter: blur(0);
-          filter: blur(0);
-  will-change: filter;
   height: inherit;
   min-height: inherit;
-}
-
-.is-popup-open .page-wrapper {
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
 }
 
 .page-header {
@@ -2587,7 +2575,7 @@ span.wpcf7-not-valid-tip {
   width: 100%;
   min-width: auto;
   margin-top: auto;
-  color: #3d4a57;
+  color: #ffffff;
 }
 
 .tariff-plan__to-order::before {
@@ -2600,49 +2588,6 @@ span.wpcf7-not-valid-tip {
 
 .tariff-plan__to-order:hover, .tariff-plan__to-order:focus {
   color: #ffffff;
-}
-
-.tariff-plan__to-order:hover::before, .tariff-plan__to-order:focus::before {
-  -webkit-transform-origin: 80% 80%;
-          transform-origin: 80% 80%;
-  -webkit-transform: rotate(1.2deg);
-          transform: rotate(1.2deg);
-  opacity: 1;
-}
-
-.tariff-plan__to-order:active::before {
-  -webkit-transform-origin: 50%;
-          transform-origin: 50%;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-  opacity: 1;
-}
-
-.tariff-plan:hover .tariff-plan__to-order {
-  color: #ffffff;
-}
-
-.tariff-plan:hover .tariff-plan__to-order::before {
-  opacity: 1;
-  -webkit-transform: rotate(-2deg);
-          transform: rotate(-2deg);
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
-}
-
-.tariff-plan__to-order-text {
-  border: 1px solid #3d4a57;
-  background-color: transparent;
-}
-
-.tariff-plan:hover .tariff-plan__to-order-text {
-  background-color: #3ab54b;
-  border-color: transparent;
-}
-
-.tariff-plan__to-order:hover .tariff-plan__to-order-text,
-.tariff-plan__to-order:focus .tariff-plan__to-order-text {
-  border-color: transparent;
 }
 
 .weekly-menu-tabs__menu {
@@ -2708,9 +2653,6 @@ span.wpcf7-not-valid-tip {
           flex-direction: column;
   width: 100%;
   margin-bottom: 7px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   background-color: #ffffff;
   overflow: hidden;
   text-align: center;
@@ -3381,6 +3323,45 @@ span.wpcf7-not-valid-tip {
   .tariff-plans__item:nth-child(4n) {
     margin-right: 0;
   }
+  .tariff-plan__to-order {
+    color: #3d4a57;
+  }
+  .tariff-plan__to-order:hover::before, .tariff-plan__to-order:focus::before {
+    -webkit-transform-origin: 80% 80%;
+            transform-origin: 80% 80%;
+    -webkit-transform: rotate(1.2deg);
+            transform: rotate(1.2deg);
+    opacity: 1;
+  }
+  .tariff-plan__to-order:active::before {
+    -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 1;
+  }
+  .tariff-plan:hover .tariff-plan__to-order {
+    color: #ffffff;
+  }
+  .tariff-plan:hover .tariff-plan__to-order::before {
+    opacity: 1;
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+    -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+  }
+  .tariff-plan__to-order-text {
+    border: 1px solid #3d4a57;
+    background-color: transparent;
+  }
+  .tariff-plan:hover .tariff-plan__to-order-text {
+    background-color: #3ab54b;
+    border-color: transparent;
+  }
+  .tariff-plan__to-order:hover .tariff-plan__to-order-text,
+  .tariff-plan__to-order:focus .tariff-plan__to-order-text {
+    border-color: transparent;
+  }
   .menu-for-day__list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3520,6 +3501,9 @@ span.wpcf7-not-valid-tip {
     margin-right: 7px;
     min-width: 200px;
     max-width: 230px;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
 }
 
