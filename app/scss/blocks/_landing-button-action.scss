@@ -2,9 +2,8 @@
   position: relative;
   z-index: 1;
   display: inline-block;
-  vertical-align: middle;
+  min-width: rem(295);
   padding: 0;
-  min-width: 295px;
   font-style: normal;
   font-weight: 500;
   font-size: rem(15);
@@ -14,10 +13,11 @@
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  border: none;
-  border-radius: rem(50);
+  vertical-align: middle;
   color: #ffffff;
   background: none;
+  border: none;
+  border-radius: rem(50);
   box-sizing: border-box;
   cursor: pointer;
   user-select: none;
