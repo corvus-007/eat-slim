@@ -19,20 +19,11 @@ $menu-for-day-gap: 7px;
   flex-direction: column;
   width: 100%;
   margin-bottom: $menu-for-day-gap;
-  flex-grow: 1;
   background-color: #ffffff;
   overflow: hidden;
   text-align: center;
   border-radius: $border-radius;
   box-sizing: border-box;
-
-  @include mq-range(375px, 666px) {
-    // @include calc-column-width(2, $menu-for-day-gap);
-  }
-
-  @include mq-range(667px, 991px) {
-    // @include calc-column-width(3, $menu-for-day-gap);
-  }
 
   @include mq-min(992px) {
     @include calc-column-width(5, $menu-for-day-gap);
