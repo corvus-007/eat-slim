@@ -62,7 +62,7 @@
   width: 100%;
   min-width: auto;
   margin-top: auto;
-  color: $secondary-color;
+  color: #ffffff;
 
   &::before {
     opacity: 0;
@@ -75,41 +75,48 @@
     color: #ffffff;
   }
 
-  &:hover::before,
-  &:focus::before {
-    transform-origin: 80% 80%;
-    transform: rotate(1.2deg);
-    opacity: 1;
-  }
+  @include mq-min(992px) {
+    color: $secondary-color;
 
-  &:active::before {
-    transform-origin: 50%;
-    transform: scale(0.8);
-    opacity: 1;
-  }
-
-  .tariff-plan:hover & {
-    color: #ffffff;
-
-    &::before {
+    &:hover::before,
+    &:focus::before {
+      transform-origin: 80% 80%;
+      transform: rotate(1.2deg);
       opacity: 1;
-      transform: rotate(-2deg);
-      transition-delay: 0.1s;
+    }
+
+    &:active::before {
+      transform-origin: 50%;
+      transform: scale(0.8);
+      opacity: 1;
+    }
+
+    .tariff-plan:hover & {
+      color: #ffffff;
+
+      &::before {
+        opacity: 1;
+        transform: rotate(-2deg);
+        transition-delay: 0.1s;
+      }
     }
   }
 }
 
 .tariff-plan__to-order-text {
-  border: 1px solid $secondary-color;
-  background-color: transparent;
 
-  .tariff-plan:hover & {
-    background-color: $accent-color;
-    border-color: transparent;
-  }
+  @include mq-min(992px) {
+    border: 1px solid $secondary-color;
+    background-color: transparent;
 
-  .tariff-plan__to-order:hover &,
-  .tariff-plan__to-order:focus & {
-    border-color: transparent;
+    .tariff-plan:hover & {
+      background-color: $accent-color;
+      border-color: transparent;
+    }
+
+    .tariff-plan__to-order:hover &,
+    .tariff-plan__to-order:focus & {
+      border-color: transparent;
+    }
   }
 }
