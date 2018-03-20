@@ -63,30 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
     popup.classList.remove(POPUP_MODIFY_SHOW_CLASS);
   }
 
-  var formNewOrder = document.querySelector('.form-new-order');
-
-  if (formNewOrder) {
-    var formNewOrderSlider = formNewOrder.querySelector('#form-new-order-slider');
-    noUiSlider.create(formNewOrderSlider, {
-      start: 3,
-      behaviour: 'snap',
-      connect: [true, false],
-      tooltips: true,
-      padding: [1, 0],
-      step: 1,
-      range: {
-        'min': [1],
-        'max': [7, 1]
-      },
-      pips: {
-        mode: 'values',
-        values: [1, 2, 3, 4, 5, 6, 7],
-        density: 100 / 7,
-        stepped: true
-      }
-    });
-  }
-
   var formCalculator = document.querySelector('.form-calculator');
   var FORM_CALCULATOR_CONROLS_SELECTOR = '[data-calculator-role="control"]';
   var FORM_CALCULATOR_OUTPUT_SELECTOR = '[data-calculator-role="output"]';
@@ -99,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var personHeight = 0;
   var personAge = 0;
   var coeffActivity = 0;
-
 
   function calcFormForMan() {
     return (

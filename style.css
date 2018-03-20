@@ -2089,6 +2089,84 @@ select.form-control {
   content: "*";
 }
 
+.checkbox {
+  font-size: 0.88889rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.checkbox__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox__input:hover + .checkbox__indicator::before, .checkbox__input:focus + .checkbox__indicator::before {
+  border-color: #aaaaaa;
+}
+
+.checkbox__input:checked + .checkbox__indicator::after {
+  -webkit-transform: rotate(-45deg) scale(1);
+          transform: rotate(-45deg) scale(1);
+  opacity: 1;
+}
+
+.checkbox__input:disabled + .checkbox__indicator {
+  opacity: 0.3;
+}
+
+.checkbox__indicator {
+  position: relative;
+  display: inline-block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox__indicator::before {
+  content: "";
+  display: inline-block;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  vertical-align: middle;
+  border: 1px solid #aaaaaa;
+  -webkit-transition: border-color 0.28s;
+  transition: border-color 0.28s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.checkbox__indicator::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 7px;
+  width: 17px;
+  height: 9px;
+  border: 3px solid #8dc53e;
+  border-top: none;
+  border-right: none;
+  -webkit-transform: rotate(-45deg) scale(0);
+          transform: rotate(-45deg) scale(0);
+  opacity: 0;
+  -webkit-transition: 0.28s;
+  transition: 0.28s;
+}
+
 .form-section {
   margin: 0;
   padding: 0;
@@ -2241,6 +2319,27 @@ select.form-control {
 .form-calculator__output-value {
   font-weight: 600;
   font-size: 1.5rem;
+}
+
+.form-new-order__slider {
+  margin-bottom: 50px;
+}
+
+.form-new-order__total {
+  margin-top: 20px;
+}
+
+.form-new-order__footer {
+  margin-top: 20px;
+}
+
+.form-new-order__agree {
+  font-size: 0.77778rem;
+  line-height: 1;
+}
+
+.form-new-order__submit {
+  margin-top: 1rem;
 }
 
 .popup {
@@ -2621,6 +2720,7 @@ select.form-control {
 
 .page-content {
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .how-it-work {
@@ -3171,6 +3271,61 @@ select.form-control {
   background-color: #ffe4b9;
 }
 
+.form-new-order-total__table {
+  font-size: 1.11111rem;
+}
+
+.form-new-order-total__table-label {
+  font-weight: 500;
+  font-size: 0.88889rem;
+  padding-right: 1rem;
+}
+
+.form-new-order-total__table-value {
+  font-weight: 500;
+}
+
+.form-new-order-slder {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 10px;
+  height: 6px;
+  border-color: #aaaaaa;
+}
+
+.form-new-order-slder .noUi-connects {
+  border-radius: 10px;
+}
+
+.form-new-order-slder .noUi-connect {
+  background-color: #8dc53e;
+}
+
+.form-new-order-slder .noUi-marker {
+  display: none;
+}
+
+.form-new-order-slder .noUi-value-horizontal {
+  -webkit-transform: translate(-50%, 10%);
+          transform: translate(-50%, 10%);
+  font-size: 15px;
+}
+
+.form-new-order-slder .noUi-handle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  right: -18px;
+  top: -16px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+.form-new-order-slder .noUi-handle::before, .form-new-order-slder .noUi-handle::after {
+  content: none;
+}
+
 .popup-calculator {
   color: #ffffff;
 }
@@ -3295,6 +3450,36 @@ select.form-control {
 }
 
 @media (min-width: 568px) {
+  .form-new-order__pay-columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-new-order__total {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+  .form-new-order__submit-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-new-order__agree {
+    margin-left: auto;
+  }
+  .form-new-order__submit {
+    margin-top: 0;
+    margin-left: 20px;
+  }
   .homepage-section__title {
     display: -webkit-box;
     display: -ms-flexbox;
