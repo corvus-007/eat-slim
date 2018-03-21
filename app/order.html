@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Оформление заказа — ЕшьХудей</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    @@include('blocks/page-header.html')
+
+    <main class="page-content">
+      <div class="container">
+        <h1 class="page-title">Оформление заказа</h1>
+      </div>
+      <form class="form-new-order container" action="" method="POST">
+<!--         <div class="form-new-order-tariff">
+          <b class="form-new-order-tariff__name">Тариф Lite</b>
+          <span class="form-new-order-tariff__price">500 руб.</span>
+          <span class="form-new-order-tariff__calories">1200 ккал</span>
+        </div>
+        <div class="tariff-plan tariff-plan--choose-order">
+          <h3 class="tariff-plan__name"><span class="tariff-plan__name-label">Тариф</span> Lite</h3>
+          <span class="tariff-plan__price">500 <span class="tariff-plan__price-currency">руб.</span></span>
+          <span class="tariff-plan__calories">1200 ккал</span>
+        </div> -->
+        <fieldset class="form-section form-section--inverse">
+          <legend class="form-section__header">
+            <h2 class="form-section__title">Тариф</h2>
+          </legend>
+          <div class="radioboxes-list">
+            <label class="radioboxes-list__item radiobox">
+              <input class="radiobox__input" type="radio" name="order_tariff" value="lite" data-order-role="control" data-tarif-price="500" checked>
+              <span class="radiobox__indicator">
+                <span class="radiobox__text">Lite</span>
+                <span class="radiobox__note">500 руб. (1200 ккал)</span>
+              </span>
+            </label>
+            <label class="radioboxes-list__item radiobox">
+              <input class="radiobox__input" type="radio" name="order_tariff" value="lite+" data-order-role="control" data-tarif-price="550">
+              <span class="radiobox__indicator">
+                <span class="radiobox__text">Lite+</span>
+              </span>
+              <span class="radiobox__note">550 руб. (1300 ккал)</span>
+            </label>
+            <label class="radioboxes-list__item radiobox">
+              <input class="radiobox__input" type="radio" name="order_tariff" value="fitness" data-order-role="control" data-tarif-price="600">
+              <span class="radiobox__indicator">
+                <span class="radiobox__text">Fitness</span>
+              </span>
+              <span class="radiobox__note">600 руб. (1400 ккал)</span>
+            </label>
+            <label class="radioboxes-list__item radiobox">
+              <input class="radiobox__input" type="radio" name="order_tariff" value="fitness+" data-order-role="control" data-tarif-price="650">
+              <span class="radiobox__indicator">
+                <span class="radiobox__text">Fitness+</span>
+              </span>
+              <span class="radiobox__note">650 руб. (1500 ккал)</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="form-section">
+          <legend class="form-section__header">
+            <h2 class="form-section__title">Ваши данные</h2>
+          </legend>
+          <div class="fields-list form-new-order__person-list">
+          <label class="fields-list__item form-new-order__person-item form-field">
+            <span class="form-field__text form-field__text--required">Имя</span>
+            <input class="form-field__control form-control" type="text" name="order_name" placeholder="" required>
+          </label>
+          <label class="fields-list__item form-new-order__person-item form-field">
+            <span class="form-field__text form-field__text--required">E-mail</span>
+            <input class="form-field__control form-control" type="email" name="order_email" placeholder="arni@mail.ru" required>
+          </label>
+          <label class="fields-list__item form-new-order__person-item form-field">
+            <span class="form-field__text form-field__text--required">Телефон</span>
+            <input class="form-field__control form-control" type="tel" name="order_tel" placeholder="+7 (___) ___-__-__" required>
+          </label>
+          <div class="fields-list__item form-new-order__person-item form-field">
+            <span class="form-field__text">Пол</span>
+            <div class="form-field__control">
+              <div class="radioboxes-list">
+                <label class="radioboxes-list__item radiobox">
+                  <input class="radiobox__input" type="radio" name="gender" value="male" checked>
+                  <span class="radiobox__indicator">
+                    <svg class="radiobox__icon" width="25" height="25">
+                      <use xlink:href="images/symbols.svg#male-avatar-circle"></use>
+                    </svg>
+                    <span class="radiobox__text">мужской</span>
+                  </span>
+                </label>
+                <label class="radioboxes-list__item radiobox">
+                  <input class="radiobox__input" type="radio" name="gender" value="female">
+                  <span class="radiobox__indicator">
+                    <svg class="radiobox__icon" width="25" height="25">
+                      <use xlink:href="images/symbols.svg#people"></use>
+                    </svg>
+                    <span class="radiobox__text">женский</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        </fieldset>
+        <fieldset class="form-section">
+          <legend class="form-section__header">
+            <h2 class="form-section__title">Доставка</h2>
+          </legend>
+          <label class="form-field">
+            <span class="form-field__text form-field__text--required">Адрес</span>
+            <input class="form-field__control form-control" type="text" name="order_address" placeholder="" required>
+          </label>
+          <label class="form-field">
+            <span class="form-field__text">Длительность, дней</span>
+            <div class="form-new-order__slider form-new-order-slder" id="form-new-order-slider"></div>
+          </label>
+          <label class="form-field">
+            <span class="form-field__text">Дополнительная информация</span>
+            <textarea class="form-control" name="order_message"></textarea>
+          </label>
+        </fieldset>
+        <fieldset class="form-section">
+          <legend class="form-section__header">
+            <h2 class="form-section__title">Выбор оплаты</h2>
+          </legend>
+          <div class="form-new-order__pay-columns">
+            <div class="form-new-order__pay-columns-item radioboxes-list radioboxes-list--fit-content">
+              <label class="radioboxes-list__item radiobox">
+                <input class="radiobox__input" type="radio" name="pay" value="online" checked>
+                <span class="radiobox__indicator">
+                  <svg class="radiobox__icon" width="25" height="25">
+                    <use xlink:href="images/symbols.svg#male-avatar-circle"></use>
+                  </svg>
+                  <span class="radiobox__text">Онлайн оплата</span>
+                </span>
+              </label>
+              <label class="radioboxes-list__item radiobox">
+                <input class="radiobox__input" type="radio" name="pay" value="cash">
+                <span class="radiobox__indicator">
+                  <svg class="radiobox__icon" width="25" height="25">
+                    <use xlink:href="images/symbols.svg#people"></use>
+                  </svg>
+                  <span class="radiobox__text">Курьеру</span>
+                </span>
+              </label>
+            </div>
+            <div class="form-new-order__pay-columns-item form-new-order__total form-new-order-total">
+              <table class="form-new-order-total__table">
+                <tbody>
+                  <tr>
+                    <th class="form-new-order-total__table-label">Стоимость:</th>
+                    <td class="form-new-order-total__table-value" data-order-role="total-sum">25 680 руб.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-new-order__footer">
+          <div class="form-new-order__submit-wrapper">
+            <label class="form-new-order__agree checkbox">
+              <input class="checkbox__input" type="checkbox" name="order_agree" checked required>
+              <span class="checkbox__indicator">Я согласен с условиями данного <a href=""> договора</a>*</span>
+            </label>
+            <button class="form-new-order__submit landing-button-action" type="submit"><span class="landing-button-action__text">Оформить заказ</span></button>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    @@include('blocks/page-footer.html')
+  </div>
+
+  @@include('blocks/site-scripts.html')
+</body>
+</html>
