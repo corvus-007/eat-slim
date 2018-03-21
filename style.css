@@ -2245,11 +2245,13 @@ select.form-control {
 .radiobox__input:checked + .radiobox__indicator {
   background-color: #8dc53e;
   color: #05101b;
+  -webkit-box-shadow: 0 0 0 1px #8dc53e;
+          box-shadow: 0 0 0 1px #8dc53e;
 }
 
 .radiobox__input:focus + .radiobox__indicator {
-  -webkit-box-shadow: 0 0 1rem #99cb52;
-          box-shadow: 0 0 1rem #99cb52;
+  -webkit-box-shadow: 0 0 0 1px #8dc53e, 0 0 1rem #99cb52;
+          box-shadow: 0 0 0 1px #8dc53e, 0 0 1rem #99cb52;
 }
 
 .radiobox__indicator {
@@ -2720,8 +2722,8 @@ select.form-control {
 
 .page-content {
   display: block;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .page-text {
@@ -3338,7 +3340,11 @@ select.form-control {
 }
 
 .form-new-order-total__table {
-  font-size: 1.11111rem;
+  font-size: 1.22222rem;
+}
+
+.form-new-order-total__table tr {
+  vertical-align: bottom;
 }
 
 .form-new-order-total__table-label {
@@ -3347,8 +3353,18 @@ select.form-control {
   padding-right: 1rem;
 }
 
+.form-new-order-total__table-rebate {
+  display: block;
+  font-size: 0.88889rem;
+  color: #7a7a7a;
+  text-align: right;
+}
+
 .form-new-order-total__table-value {
+  display: block;
+  min-width: 100px;
   font-weight: 500;
+  text-align: right;
 }
 
 .form-new-order-slder {
