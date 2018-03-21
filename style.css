@@ -2719,8 +2719,74 @@ select.form-control {
 }
 
 .page-content {
+  display: block;
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.page-text {
+  line-height: 1.6;
+  letter-spacing: 0;
+  font-family: "proxima_nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.page-text > * + *:not(li) {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.page-text > * + h2 {
+  margin-top: 2.25rem;
+}
+
+.page-text > * + h3 {
+  margin-top: 2rem;
+}
+
+.page-text > h2 + * {
+  margin-top: 0.75rem;
+}
+
+.page-text > h3 + * {
+  margin-top: 0.75rem;
+}
+
+.page-text > h4 + * {
+  margin-top: 0.8rem;
+}
+
+.page-text > h2 + h3 {
+  margin-top: 0.9rem;
+}
+
+.page-text > h2 {
+  margin-bottom: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.page-text > h3 {
+  margin-bottom: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.88889rem;
+  letter-spacing: 0.05em;
+}
+
+.page-text > h4 {
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 0.83333rem;
+}
+
+.page-text img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .how-it-work {
@@ -3683,6 +3749,14 @@ select.form-control {
   }
   .welcome__body {
     width: 70%;
+  }
+  .page-text .alignleft {
+    float: left;
+    margin-right: 20px;
+  }
+  .page-text .alignright {
+    float: right;
+    margin-left: 20px;
   }
   .weekly-menu-tabs__menu {
     margin-bottom: 2.22222rem;

@@ -1,6 +1,6 @@
-'use strict';
-
 window.util = (function () {
+  'use strict';
+
   return {
     setMaxHeight: function (selector) {
       var maxHeight;
@@ -18,31 +18,46 @@ window.util = (function () {
       Array.from(elements).forEach(function specifyMaxHeight(it) {
         it.style.height = maxHeight + 'px';
       });
+    },
+    declOfNum: function (titles) {
+      var number = Math.abs(number);
+      var cases = [2, 0, 1, 1, 1, 2];
+
+      return function (number) {
+        return titles[
+          number % 100 > 4 && number % 100 < 20 ?
+          2 :
+          cases[number % 10 < 5 ? number % 10 : 5]
+        ];
+      };
     }
   }
 })();
 
 window.newOrder = (function () {
   var formNewOrder = document.querySelector('.form-new-order');
+
+  if (!formNewOrder) {
+    return;
+  }
+
   var formNewOrderSlider = formNewOrder.querySelector('#form-new-order-slider');
   var TOTAL_SUM_SELECTOR = '[data-order-role="total-sum"]';
   var TARIFF_PRICE_SELECTOR = '[data-tarif-price]';
   var CONTROLS_SELECTOR = '[data-order-role="control"]';
+  var rebate = 10 / 100;
+  var price = 0;
+  var days = 0;
 
-  function declOfNum(titles) {
-    var number = Math.abs(number);
-    var cases = [2, 0, 1, 1, 1, 2];
-    return function (number) {
-      return titles[
-        number % 100 > 4 && number % 100 < 20 ?
-        2 :
-        cases[number % 10 < 5 ? number % 10 : 5]
-      ];
-    };
-  }
+  function calcOrder() {
+    var result = 0;
 
-  if (!formNewOrder) {
-    return;
+    result = price * days;
+    if (days === 7) {
+      result -= rebate * result;
+    }
+
+    return result;
   }
 
   noUiSlider.create(formNewOrderSlider, {
@@ -63,26 +78,11 @@ window.newOrder = (function () {
       stepped: true,
       // format: {
       //   to: function (value) {
-      //     return parseInt(value) + ' ' +  declOfNum(['день', 'дня', 'дней'])(value);
+      //     return parseInt(value) + ' ' + window.util.declOfNum(['день', 'дня', 'дней'])(value);
       //   }
       // }
     }
   });
-
-  var rebate = 10 / 100;
-  var price = 0;
-  var days = 0;
-
-  function calcOrder() {
-    var result = 0;
-
-    result = price * days;
-    if (days === 7) {
-      result -= rebate * result;
-    }
-
-    return result;
-  }
 
   formNewOrderSlider.noUiSlider.on('update', function (values, handle) {
     price = $(TARIFF_PRICE_SELECTOR).filter(':checked').data('tarif-price');
