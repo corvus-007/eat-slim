@@ -3,14 +3,14 @@
     <button class="popup__close" type="button">Закрыть попап</button>
   </div>
   <div class="popup-calculator__body popup__body popup__container">
-    <form class="form-profile" action="" method="POST">
-      <fieldset class="form-section">
+    <form class="form-calculator" action="" method="POST">
+      <fieldset class="form-section form-section--inverse">
         <legend class="form-section__header">
           <h2 class="form-section__title">Укажите пол</h2>
         </legend>
-        <div class="radioboxes-list">
-          <label class="radioboxes-list__item radiobox">
-            <input class="radiobox__input" type="radio" name="gender" value="male" data-profile-role="control" checked>
+        <div class="radioboxes-list radioboxes-list--inverse radioboxes-list--fit-content">
+          <label class="radioboxes-list__item radiobox radiobox--inverse">
+            <input class="radiobox__input" type="radio" name="gender" value="male" data-calculator-role="control" checked>
             <span class="radiobox__indicator">
               <svg class="radiobox__icon" width="25" height="25">
                 <use xlink:href="images/symbols.svg#male-avatar-circle"></use>
@@ -18,8 +18,8 @@
               <span class="radiobox__text">мужской</span>
             </span>
           </label>
-          <label class="radioboxes-list__item radiobox">
-            <input class="radiobox__input" type="radio" name="gender" value="female" data-profile-role="control">
+          <label class="radioboxes-list__item radiobox radiobox--inverse">
+            <input class="radiobox__input" type="radio" name="gender" value="female" data-calculator-role="control">
             <span class="radiobox__indicator">
               <svg class="radiobox__icon" width="25" height="25">
                 <use xlink:href="images/symbols.svg#people"></use>
@@ -29,13 +29,13 @@
           </label>
         </div>
       </fieldset>
-      <fieldset class="form-section">
+      <fieldset class="form-section form-section--inverse">
         <legend class="form-section__header">
           <h2 class="form-section__title">К каким результатам стремитесь?</h2>
         </legend>
-        <div class="radioboxes-list">
-          <label class="radioboxes-list__item radiobox">
-            <input class="radiobox__input" type="radio" name="targetPerson" value="slim" data-profile-role="control">
+        <div class="radioboxes-list radioboxes-list--inverse radioboxes-list--fit-content">
+          <label class="radioboxes-list__item radiobox radiobox--inverse">
+            <input class="radiobox__input" type="radio" name="targetPerson" value="slim" data-calculator-role="control">
             <span class="radiobox__indicator">
               <svg class="radiobox__icon" width="25" height="25">
                 <use xlink:href="images/symbols.svg#waist"></use>
@@ -43,8 +43,8 @@
               <span class="radiobox__text">похудение</span>
             </span>
           </label>
-          <label class="radioboxes-list__item radiobox">
-            <input class="radiobox__input" type="radio" name="targetPerson" value="muscle" data-profile-role="control" checked>
+          <label class="radioboxes-list__item radiobox radiobox--inverse">
+            <input class="radiobox__input" type="radio" name="targetPerson" value="muscle" data-calculator-role="control" checked>
             <span class="radiobox__indicator">
               <svg class="radiobox__icon" width="25" height="25">
                 <use xlink:href="images/symbols.svg#dumbbell"></use>
@@ -52,8 +52,8 @@
               <span class="radiobox__text">рост мышечной массы</span>
             </span>
           </label>
-          <label class="radioboxes-list__item radiobox">
-            <input class="radiobox__input" type="radio" name="targetPerson" value="tone" data-profile-role="control">
+          <label class="radioboxes-list__item radiobox radiobox--inverse">
+            <input class="radiobox__input" type="radio" name="targetPerson" value="tone" data-calculator-role="control">
             <span class="radiobox__indicator">
               <svg class="radiobox__icon" width="25" height="25">
                 <use xlink:href="images/symbols.svg#scales"></use>
@@ -63,62 +63,62 @@
           </label>
         </div>
       </fieldset>
-      <fieldset class="form-section">
+      <fieldset class="form-section form-section--inverse">
         <legend class="form-section__header">
           <h2 class="form-section__title">Ваши индивидуальные параметры</h2>
         </legend>
-        <div class="fields-list">
-          <label class="fields-list__item form-field">
+        <div class="fields-list form-calculator__parameters-list">
+          <label class="fields-list__item form-calculator__parameters-item form-field form-field--inverse">
             <span class="form-field__text">Вес, кг</span>
-            <input class="form-field__control form-field__control--individual form-control" type="number" name="weight" min="0" maxlength="3" placeholder="——" data-profile-role="control" required>
+            <input class="form-field__control form-field__control--individual form-control form-control--inverse" type="number" name="weight" min="0" maxlength="3" placeholder="——" data-calculator-role="control" required>
           </label>
-          <label class="fields-list__item form-field">
+          <label class="fields-list__item form-calculator__parameters-item form-field form-field--inverse">
             <span class="form-field__text">Рост, см</span>
-            <input class="form-field__control form-field__control--individual form-control" type="number" name="height" min="0" maxlength="3" placeholder="——" data-profile-role="control" required>
+            <input class="form-field__control form-field__control--individual form-control form-control--inverse" type="number" name="height" min="0" maxlength="3" placeholder="——" data-calculator-role="control" required>
           </label>
-          <label class="fields-list__item form-field">
+          <label class="fields-list__item form-calculator__parameters-item form-field form-field--inverse">
             <span class="form-field__text">Возраст, лет</span>
-            <input class="form-field__control form-field__control--individual form-control" type="number" name="age" min="0" maxlength="3" placeholder="——" data-profile-role="control" required>
+            <input class="form-field__control form-field__control--individual form-control form-control--inverse" type="number" name="age" min="0" maxlength="3" placeholder="——" data-calculator-role="control" required>
           </label>
         </div>
       </fieldset>
-      <fieldset class="form-section">
+      <fieldset class="form-section form-section--inverse">
         <legend class="form-section__header">
           <h2 class="form-section__title">Уровень активности</h2>
         </legend>
         <div class="radioboxes-group-list-activity">
-          <div class="radioboxes-list radioboxes-list-activity">
-            <label class="radioboxes-list__item radioboxes-list-activity__item radiobox">
-              <input class="radiobox__input" type="radio" name="activity" value="1.2" data-profile-role="control" checked>
+          <div class="radioboxes-list radioboxes-list--inverse radioboxes-list-activity">
+            <label class="radioboxes-list__item radioboxes-list-activity__item radiobox radiobox--inverse">
+              <input class="radiobox__input" type="radio" name="activity" value="1.2" data-calculator-role="control" checked>
               <span class="radiobox__indicator">
                 <span class="radiobox__text">сидячий образ жизни</span>
               </span>
             </label>
-            <label class="radioboxes-list__item radioboxes-list-activity__item radiobox">
-              <input class="radiobox__input" type="radio" name="activity" value="1.375" data-profile-role="control">
+            <label class="radioboxes-list__item radioboxes-list-activity__item radiobox radiobox--inverse">
+              <input class="radiobox__input" type="radio" name="activity" value="1.375" data-calculator-role="control">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">средняя активность</span>
               </span>
               <span class="radiobox__note">легкие упражнения 1-3 раза в неделю</span>
             </label>
-            <label class="radioboxes-list__item radioboxes-list-activity__item radiobox">
-              <input class="radiobox__input" type="radio" name="activity" value="1.4625" data-profile-role="control">
+            <label class="radioboxes-list__item radioboxes-list-activity__item radiobox radiobox--inverse">
+              <input class="radiobox__input" type="radio" name="activity" value="1.4625" data-calculator-role="control">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">повышенная активность</span>
               </span>
               <span class="radiobox__note">активные тренировки 3-5 раз в неделю</span>
             </label>
           </div>
-          <div class="radioboxes-list radioboxes-list-activity radioboxes-list-activity--stub">
-            <label class="radioboxes-list__item radioboxes-list-activity__item radiobox">
-              <input class="radiobox__input" type="radio" name="activity" value="1.550" data-profile-role="control">
+          <div class="radioboxes-list radioboxes-list--inverse radioboxes-list-activity radioboxes-list-activity--stub">
+            <label class="radioboxes-list__item radioboxes-list-activity__item radiobox radiobox--inverse">
+              <input class="radiobox__input" type="radio" name="activity" value="1.550" data-calculator-role="control">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">очень высокая активность</span>
               </span>
               <span class="radiobox__note">тяжелые физические нагрузки 6-7 раз в неделю</span>
             </label>
-            <label class="radioboxes-list__item radioboxes-list-activity__item radiobox">
-              <input class="radiobox__input" type="radio" name="activity" value="1.6375" data-profile-role="control">
+            <label class="radioboxes-list__item radioboxes-list-activity__item radiobox radiobox--inverse">
+              <input class="radiobox__input" type="radio" name="activity" value="1.6375" data-calculator-role="control">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">экстремальная активность</span>
               </span>
@@ -127,13 +127,13 @@
           </div>
         </div>
       </fieldset>
-      <div class="form-profile__output">
-        <span class="form-profile__output-text">Ваша дневная норма калорий</span>
-        <span class="form-profile__output-value" data-profile-role="output"></span>
+      <div class="form-calculator__output">
+        <span class="form-calculator__output-text">Ваша дневная норма калорий</span>
+        <span class="form-calculator__output-value" data-calculator-role="output"></span>
         ккал/день
       </div>
-      <div class="form-profile__submit-wrapper">
-        <button class="form-profile__submit landing-button-action" type="submit"><span class="landing-button-action__text">Заказать</span></button>
+      <div class="form-calculator__submit-wrapper">
+        <button class="form-calculator__submit landing-button-action" type="submit"><span class="landing-button-action__text">Заказать</span></button>
       </div>
     </form>
   </div>
