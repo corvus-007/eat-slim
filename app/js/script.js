@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   svg4everybody();
 
+  $('input[type="tel"]').mask('+7 (999) 999-99-99', {});
+
   var POPUP_MODIFY_SHOW_CLASS = 'popup--open';
   var BODY_POPUP_SHOWED_CLASS = 'is-popup-open';
 
@@ -17,27 +19,53 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function showPopup(selector) {
-    var popup = document.querySelector(selector);
+  function getScrollBarWidth() {
+    // создадим элемент с прокруткой
+    var div = document.createElement('div');
+
+    div.style.overflowY = 'scroll';
+    div.style.width = '50px';
+    div.style.height = '50px';
+
+    // при display:none размеры нельзя узнать
+    // нужно, чтобы элемент был видим,
+    // visibility:hidden - можно, т.к. сохраняет геометрию
+    div.style.visibility = 'hidden';
+
+    document.body.appendChild(div);
+    var scrollWidth = div.offsetWidth - div.clientWidth;
+    document.body.removeChild(div);
+
+    return scrollWidth;
+  }
+
+  function showPopup(popupSelector) {
+    var popup = document.querySelector(popupSelector);
     var popupClose = popup.querySelector('.popup__close');
-    document.body.classList.add(BODY_POPUP_SHOWED_CLASS);
+
+    // document.body.classList.add(BODY_POPUP_SHOWED_CLASS);
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = getScrollBarWidth() + 'px';
     popup.classList.add(POPUP_MODIFY_SHOW_CLASS);
 
     popupClose.addEventListener('click', function (event) {
       event.preventDefault();
-      closePopup(selector);
+      closePopup(popupSelector);
     });
   }
 
-  function closePopup(selector) {
-    var popup = document.querySelector(selector);
-    document.body.classList.remove(BODY_POPUP_SHOWED_CLASS);
+  function closePopup(popupSelector) {
+    var popup = document.querySelector(popupSelector);
+
+    // document.body.classList.remove(BODY_POPUP_SHOWED_CLASS);
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
     popup.classList.remove(POPUP_MODIFY_SHOW_CLASS);
   }
 
-  var formProfile = document.querySelector('.form-profile');
-  var FORM_PROFILE_CONROLS_SELECTOR = '[data-profile-role="control"]';
-  var FORM_PROFILE_OUTPUT_SELECTOR = '[data-profile-role="output"]';
+  var formCalculator = document.querySelector('.form-calculator');
+  var FORM_CALCULATOR_CONROLS_SELECTOR = '[data-calculator-role="control"]';
+  var FORM_CALCULATOR_OUTPUT_SELECTOR = '[data-calculator-role="output"]';
   var RATIO_SLIM = 0.2;
   var RATIO_MUSCLE = 0.1;
   var RATIO_TONE = 0;
@@ -65,16 +93,16 @@ document.addEventListener('DOMContentLoaded', function () {
   function calcForm() {
     var result = 0;
     var resultTarget = 0;
-    gender = formProfile.querySelector('input[name="gender"]:checked').value;
-    personTarget = formProfile.querySelector('input[name="targetPerson"]:checked').value;
-    personWeight = formProfile.weight.value ?
-      parseFloat(formProfile.weight.value) :
+    gender = formCalculator.querySelector('input[name="gender"]:checked').value;
+    personTarget = formCalculator.querySelector('input[name="targetPerson"]:checked').value;
+    personWeight = formCalculator.weight.value ?
+      parseFloat(formCalculator.weight.value) :
       0;
-    personHeight = formProfile.height.value ?
-      parseFloat(formProfile.height.value) :
+    personHeight = formCalculator.height.value ?
+      parseFloat(formCalculator.height.value) :
       0;
-    personAge = formProfile.age.value ? parseFloat(formProfile.age.value) : 0;
-    coeffActivity = parseFloat(formProfile.querySelector('input[name="activity"]:checked').value);
+    personAge = formCalculator.age.value ? parseFloat(formCalculator.age.value) : 0;
+    coeffActivity = parseFloat(formCalculator.querySelector('input[name="activity"]:checked').value);
 
     if (!personWeight || !personHeight || !personAge) {
       return 0;
@@ -111,17 +139,17 @@ document.addEventListener('DOMContentLoaded', function () {
   $('[data-popup-target]').on('click', function (event) {
     event.preventDefault();
     var popupTargetSelector = this.dataset.popupTarget;
-    if (formProfile) {
+    if (formCalculator) {
       showPopup(popupTargetSelector);
     }
   });
 
-  if (formProfile) {
-    $(FORM_PROFILE_OUTPUT_SELECTOR).text(Math.round(calcForm()));
-    $(formProfile).on('change input', FORM_PROFILE_CONROLS_SELECTOR, function (
+  if (formCalculator) {
+    $(FORM_CALCULATOR_OUTPUT_SELECTOR).text(Math.round(calcForm()));
+    $(formCalculator).on('change input', FORM_CALCULATOR_CONROLS_SELECTOR, function (
       event
     ) {
-      $(FORM_PROFILE_OUTPUT_SELECTOR).text(Math.round(calcForm()));
+      $(FORM_CALCULATOR_OUTPUT_SELECTOR).text(Math.round(calcForm()));
     });
   }
 });
