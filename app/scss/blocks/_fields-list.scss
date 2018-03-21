@@ -1,26 +1,25 @@
 .fields-list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  // flex-direction: column;
+  margin-bottom: -1rem;
 
-  @include mq-min(667px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+  // @include mq-min(768px) {
+  //   flex-direction: row;
+  //   flex-wrap: wrap;
+  // }
 }
 
 .fields-list__item {
+  width: 100%;
   margin-bottom: 1rem;
+  flex-grow: 1;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+  // @include mq-min(768px) {
+  //   margin-right: 36px;
 
-  @include mq-min(667px) {
-    margin-bottom: 0;
-    margin-right: 36px;
-
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
-  }
+  //   &:nth-child(3n) {
+  //     margin-right: 0;
+  //   }
+  // }
 }

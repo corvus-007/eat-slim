@@ -1,0 +1,75 @@
+.form-new-order {
+
+}
+
+.form-new-order__person-list {
+
+}
+
+.form-new-order__person-item {
+  @include mq-range(667px, 991px) {
+    @include calc-column-width(2);
+  }
+  @include mq-min(992px) {
+    @include calc-column-width(4);
+  }
+}
+
+.form-new-order__slider {
+  margin-bottom: $gutter * 2.5;
+}
+
+.form-new-order__pay-columns {
+  @include mq-min(568px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.form-new-order__pay-columns-item {
+
+}
+
+.form-new-order__total {
+  margin-top: $gutter;
+
+  @include mq-min(568px) {
+    margin-top: 0;
+    margin-left: $gutter;
+  }
+}
+
+.form-new-order__footer {
+  margin-top: $gutter;
+}
+
+.form-new-order__footer-row {
+
+}
+
+.form-new-order__submit-wrapper {
+
+  @include mq-min(568px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.form-new-order__agree {
+  font-size: rem(14);
+  line-height: 1;
+
+  @include mq-min(568px) {
+    margin-left: auto;
+  }
+}
+
+.form-new-order__submit {
+  margin-top: 1rem;
+
+  @include mq-min(568px) {
+    margin-top: 0;
+    margin-left: $gutter;
+  }
+}

@@ -1,30 +1,28 @@
 .form-control {
   width: 100%;
   min-width: auto;
-  padding: rem(15);
+  padding: 0 rem(15);
   font: inherit;
   font-weight: 500;
   font-size: rem(15);
-  line-height: 1.4;
-  text-align: center;
-  color: #9dbad8;
-  background-color: rgba(#9dbad8, 0.1);
-  border: 1px solid #2b3844;
-  border-radius: rem(50);
+  height: rem(40);
+  line-height: 1;
+  color: $base-color;
+  background-color: rgba(#ffffff, 0.3);
+  border: 1px solid #aaaaaa;
+  border-radius: rem(20);
   box-sizing: border-box;
   transition: $duration * 1.5;
   outline: none;
 
   &:hover {
-    border-color: lighten(#2b3844, 5%);
-    background-color: rgba(#9dbad8, 0.1);
+    border-color: darken(#aaaaaa, 5%);
+    background-color: rgba(#ffffff, 0.5);
   }
 
   &:focus {
-    border-color: lighten(#2b3844, 5%);
-    // color: #030d17;
-    background-color: #ffffff;
-    background-color: rgba(#9dbad8, 0.2);
+    border-color: darken(#aaaaaa, 15%);
+    background-color: rgba(#ffffff, 0.9);
   }
 
   &[type="number"],
@@ -39,17 +37,45 @@
   }
 
   &::placeholder {
-    color: #9dbad8;
+    color: $base-color;
     opacity: 0.5;
   }
 
-  textarea#{&} {
-    max-height: 200px;
-    resize: vertical;
+  @include mq-min(667px) {
+    padding-top: rem(13);
+    padding-bottom: rem(13);
+  }
+}
+
+textarea.form-control {
+  min-height: 100px;
+  max-height: 200px;
+  resize: vertical;
+}
+
+select.form-control {
+  appearance: none;
+  background: url("../../images/show-more-button.svg") calc(100% - 1em) center no-repeat;
+  background-size: 1em;
+}
+
+.form-control--inverse {
+  color: #9dbad8;
+  background-color: rgba(#9dbad8, 0.1);
+  border: 1px solid #2b3844;
+
+  &:hover {
+    border-color: lighten(#2b3844, 5%);
+    background-color: rgba(#9dbad8, 0.1);
   }
 
-  @include mq-min(667px) {
-    padding-top: rem(10);
-    padding-bottom: rem(10);
+  &:focus {
+    border-color: lighten(#2b3844, 5%);
+    background-color: rgba(#9dbad8, 0.2);
+  }
+
+  &::placeholder {
+    color: #9dbad8;
+    opacity: 0.5;
   }
 }

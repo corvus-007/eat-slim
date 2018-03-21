@@ -1,0 +1,21 @@
+.form-new-order-total {
+
+}
+
+.form-new-order-total__table {
+  font-size: rem(20);
+
+  @include mq-min(568px) {
+    // margin-left: auto;
+  }
+}
+
+.form-new-order-total__table-label {
+  font-weight: 500;
+  font-size: rem(16);
+  padding-right: 1rem;
+}
+
+.form-new-order-total__table-value {
+  font-weight: 500;
+}

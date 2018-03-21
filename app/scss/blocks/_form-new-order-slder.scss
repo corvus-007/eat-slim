@@ -1,0 +1,38 @@
+.form-new-order-slder {
+  box-shadow: none;
+  border-radius: 10px;
+  height: 6px;
+  border-color: #aaaaaa;
+
+  .noUi-connects {
+    border-radius: 10px;
+  }
+
+  .noUi-connect {
+    background-color: $accent-color-3;
+  }
+
+  .noUi-marker {
+    display: none;
+  }
+
+  .noUi-value-horizontal {
+    transform: translate(-50%, 10%);
+    font-size: 15px;
+  }
+
+  .noUi-handle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    right: -18px;
+    top: -16px;
+    box-shadow: none;
+    outline: none;
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+}

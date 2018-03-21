@@ -18,5 +18,8 @@
   margin: 0;
   font-size: rem(18);
   font-weight: 500;
-  color: #ffffff;
+
+  &--inverse {
+    color: #ffffff;
+  }
 }

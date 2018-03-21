@@ -27,13 +27,14 @@ body {
   font-weight: 200;
   font-style: italic;
   line-height: 1.4;
-  background-color: #ffffff;
+  background-color: #eef1ef;
   color: $base-color;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
   &.is-popup-open {
-    overflow-y: hidden;
+    // overflow-y: hidden;
+    // padding-right: 18px;
   }
 }
 

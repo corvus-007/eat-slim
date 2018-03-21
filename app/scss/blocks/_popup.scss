@@ -7,7 +7,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 10;
-  background-color: rgba(#000000, 0.9);
+  background-color: rgba(#000000, 0.95);
   opacity: 0;
   transform: scale(1.5);
   visibility: hidden;
@@ -64,7 +64,6 @@
   &::after {
     transform: translateY(-50%) rotate(45deg) scaleX(1.2);
   }
-
 }
 
 .popup__title {

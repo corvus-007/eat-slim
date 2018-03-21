@@ -1,0 +1,7 @@
+.page-text {
+  @include make-textual();
+
+  font-family: $secondary-font;
+  font-style: normal;
+  font-weight: 500;
+}

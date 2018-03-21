@@ -1,15 +1,21 @@
 .page-header {
   padding-top: $gutter;
-  padding-bottom: rem(30);
+  padding-bottom: $gutter;
   color: $white-color;
+  background-color: #030d17;
+
+  .homepage & {
+    background-color: transparent;
+  }
 
   @include mq-min(667px) {
     padding-top: $gutter * 2;
+    padding-bottom: $gutter * 2;
   }
 
   @include mq-min(1024px) {
-    padding-top: rem(80);
-    padding-bottom: rem(40);
+    // padding-top: $gutter * 2;
+    // padding-bottom: $gutter * 2;
   }
 }
 

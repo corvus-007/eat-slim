@@ -42,10 +42,14 @@
   padding: rem(15);
   font-weight: 500;
   font-size: rem(19);
-  color: #9dbad8;
+  color: lighten($base-color, 10%);
   border-radius: rem(2);
   text-align: center;
   transition: $duration * 1.5;
+
+  .radiobox--inverse & {
+    color: #9dbad8;
+  }
 
   @include mq-min(667px) {
     font-size: rem(15);

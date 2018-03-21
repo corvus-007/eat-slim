@@ -12,9 +12,10 @@
 @import "global/layout";
 
 // Vendors
-@import "vendors/slick";
+// @import "vendors/slick";
 @import "vendors/jquery.fancybox.min";
 @import "vendors/flickity";
+@import "vendors/nouislider";
 
 // Blocks
 @import "blocks/landing-button-action";
@@ -23,12 +24,14 @@
 @import "blocks/form-control";
 @import "blocks/fields-list";
 @import "blocks/form-field";
-@import "blocks/form-profile";
+@import "blocks/checkbox";
 @import "blocks/form-section";
 @import "blocks/radioboxes-list";
 @import "blocks/radioboxes-group-list-activity";
 @import "blocks/radioboxes-list-activity";
 @import "blocks/radiobox";
+@import "blocks/form-calculator";
+@import "blocks/form-new-order";
 // @import "blocks/table";
 @import "blocks/popup";
 // @import "blocks/section";
@@ -43,10 +46,14 @@
 // @import "blocks/coming-soon-welcome";
 @import "blocks/page-wrapper";
 @import "blocks/page-header";
-@import "blocks/logo";
+@import "blocks/page-title";
 @import "blocks/page-phone";
+@import "blocks/logo";
 @import "blocks/social";
+
 @import "blocks/welcome";
+@import "blocks/page-content";
+@import "blocks/page-text";
 @import "blocks/how-it-work";
 @import "blocks/weekly-menu";
 @import "blocks/tariff-plans";
@@ -54,6 +61,8 @@
 @import "blocks/weekly-menu-tabs";
 @import "blocks/menu-for-day";
 @import "blocks/menu-for-day-slider";
+@import "blocks/form-new-order-total";
+@import "blocks/form-new-order-slder";
 @import "blocks/popup-calculator";
 @import "blocks/page-footer";
 // @import "blocks/main-nav";

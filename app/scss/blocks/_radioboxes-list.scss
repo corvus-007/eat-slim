@@ -1,18 +1,24 @@
 .radioboxes-list {
   display: flex;
   flex-direction: column;
-  border: 1px solid #2b3844;
+  border: 1px solid #aaaaaa;
   background-color: rgba(#9dbad8, 0.1);
   border-radius: rem(2);
 
+  &--inverse {
+    border-color: #2b3844;
+  }
+
   @include mq-min(667px) {
-    display: inline-flex;
-    flex-wrap: wrap;
     flex-direction: row;
     border-radius: rem(50);
+
+    &--fit-content {
+      display: inline-flex;
+    }
   }
 }
 
 .radioboxes-list__item {
-
+  flex-grow: 1;
 }

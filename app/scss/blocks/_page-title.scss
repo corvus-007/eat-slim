@@ -1,0 +1,26 @@
+.page-title {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 60px;
+  font-weight: 300;
+  font-size: rem(30);
+  font-family: $primary-font;
+  text-transform: uppercase;
+
+  @include mq-min(568px) {
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      flex-grow: 0;
+      display: inline-block;
+      vertical-align: middle;
+      width: rem(75);
+      margin-right: $gutter;
+      border-top: 2px solid $accent-color;
+    }
+  }
+}
