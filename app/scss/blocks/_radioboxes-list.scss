@@ -9,6 +9,10 @@
     border-color: #2b3844;
   }
 
+  &--has-notice {
+    margin-bottom: rem(15);
+  }
+
   @include mq-min(667px) {
     flex-direction: row;
     border-radius: rem(50);
