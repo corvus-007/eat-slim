@@ -39,7 +39,7 @@
               </span>
             </label>
             <label class="radioboxes-list__item radiobox">
-              <input class="radiobox__input" type="radio" name="order_tariff" value="lite+" data-order-role="control" data-tarif-price="550">
+              <input class="radiobox__input" type="radio" name="order_tariff" value="lite-plus" data-order-role="control" data-tarif-price="550">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">Lite+</span>
               </span>
@@ -53,7 +53,7 @@
               <span class="radiobox__note">600 руб. (1400 ккал)</span>
             </label>
             <label class="radioboxes-list__item radiobox">
-              <input class="radiobox__input" type="radio" name="order_tariff" value="fitness+" data-order-role="control" data-tarif-price="650">
+              <input class="radiobox__input" type="radio" name="order_tariff" value="fitness-plus" data-order-role="control" data-tarif-price="650">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">Fitness+</span>
               </span>
@@ -151,8 +151,11 @@
               <table class="form-new-order-total__table">
                 <tbody>
                   <tr>
-                    <th class="form-new-order-total__table-label">Стоимость:</th>
-                    <td class="form-new-order-total__table-value" data-order-role="total-sum">25 680 руб.</td>
+                    <th><b class="form-new-order-total__table-label">Стоимость:</b></th>
+                    <td>
+                      <span class="form-new-order-total__table-rebate" data-order-role="rebate"></span>
+                      <span class="form-new-order-total__table-value" data-order-role="total-sum">25 680 руб.</span>
+                    </td>
                   </tr>
                 </tbody>
               </table>
