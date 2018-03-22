@@ -3,10 +3,10 @@
 }
 
 .form-new-order-total__table {
-  font-size: rem(20);
+  font-size: rem(22);
 
-  @include mq-min(568px) {
-    // margin-left: auto;
+  tr {
+    vertical-align: bottom;
   }
 }
 
@@ -16,6 +16,16 @@
   padding-right: 1rem;
 }
 
+.form-new-order-total__table-rebate {
+  display: block;
+  font-size: rem(16);
+  color: $muted-color;
+  text-align: right;
+}
+
 .form-new-order-total__table-value {
+  display: block;
+  min-width: 100px;
   font-weight: 500;
+  text-align: right;
 }
