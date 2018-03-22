@@ -50,10 +50,19 @@ window.newOrder = (function () {
   var price = 0;
   var days = 0;
 
-  function calcOrder() {
-    var result = 0;
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
 
-    result = price * days;
+  function calcOrder() {
+    var result = price * days;
+
     if (days === 7) {
       result -= rebate * result;
     }
@@ -63,11 +72,19 @@ window.newOrder = (function () {
 
   function updateRebateText(days) {
     var text = 'Без скидки';
+
     if (days === 7) {
       text = 'Cкидка <b>10%</b>';
     }
+
     return text;
   }
+
+  $('[name="order_tariff"][value="' + getParameterByName('order_tariff') + '"]').prop('checked', true);
+
+  $('[name="order_tariff"]').on('click', function (event) {
+    history.replaceState({}, null, '?' + this.name + '=' + this.value);
+  });
 
   noUiSlider.create(formNewOrderSlider, {
     start: 2,
@@ -84,17 +101,7 @@ window.newOrder = (function () {
       mode: 'values',
       values: [2, 3, 4, 5, 6, 7],
       density: 100 / 7,
-      stepped: true,
-      format: {
-        to: function (value) {
-          // return parseInt(value) + ' ' + window.util.declOfNum(['день', 'дня', 'дней'])(value);
-          var val = parseInt(value);
-          if (val === 7) {
-            val += (' скидка 10%');
-          }
-          return val;
-        }
-      }
+      stepped: true
     }
   });
 
