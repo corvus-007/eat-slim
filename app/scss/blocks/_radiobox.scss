@@ -18,12 +18,13 @@
     & + .radiobox__indicator {
       background-color: $accent-color-3;
       color: #05101b;
+      box-shadow: 0 0 0 1px $accent-color-3;
     }
   }
 
   &:focus {
     & + .radiobox__indicator {
-      box-shadow: 0 0 1rem lighten($accent-color-3, 5%);
+      box-shadow: 0 0 0 1px $accent-color-3, 0 0 1rem lighten($accent-color-3, 5%);
     }
   }
 
