@@ -7,22 +7,48 @@ window.newOrder = (function () {
 
   var formNewOrderSlider = formNewOrder.querySelector('#form-new-order-slider');
   var TOTAL_SUM_SELECTOR = '[data-order-role="total-sum"]';
+  var REBATE_SELECTOR = '[data-order-role="rebate"]';
   var TARIFF_PRICE_SELECTOR = '[data-tarif-price]';
   var CONTROLS_SELECTOR = '[data-order-role="control"]';
   var rebate = 10 / 100;
   var price = 0;
   var days = 0;
 
-  function calcOrder() {
-    var result = 0;
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
 
-    result = price * days;
+  function calcOrder() {
+    var result = price * days;
+
     if (days === 7) {
       result -= rebate * result;
     }
 
     return result;
   }
+
+  function updateRebateText(days) {
+    var text = 'Без скидки';
+
+    if (days === 7) {
+      text = 'Cкидка <b>10%</b>';
+    }
+
+    return text;
+  }
+
+  $('[name="order_tariff"][value="' + getParameterByName('order_tariff') + '"]').prop('checked', true);
+
+  $('[name="order_tariff"]').on('click', function (event) {
+    history.replaceState({}, null, '?' + this.name + '=' + this.value);
+  });
 
   noUiSlider.create(formNewOrderSlider, {
     start: 2,
@@ -39,26 +65,23 @@ window.newOrder = (function () {
       mode: 'values',
       values: [2, 3, 4, 5, 6, 7],
       density: 100 / 7,
-      stepped: true,
-      // format: {
-      //   to: function (value) {
-      //     return parseInt(value) + ' ' + window.util.declOfNum(['день', 'дня', 'дней'])(value);
-      //   }
-      // }
+      stepped: true
     }
   });
 
   formNewOrderSlider.noUiSlider.on('update', function (values, handle) {
     price = $(TARIFF_PRICE_SELECTOR).filter(':checked').data('tarif-price');
     days = parseInt(values[handle], 10);
-    $(TOTAL_SUM_SELECTOR).text(calcOrder() + ' руб');
+
+    $(REBATE_SELECTOR).html(updateRebateText(days));
+    $(TOTAL_SUM_SELECTOR).html(calcOrder() + ' руб');
   });
 
   $(formNewOrder).on('change input', CONTROLS_SELECTOR, function (event) {
-    console.log('change input');
     price = $(TARIFF_PRICE_SELECTOR).filter(':checked').data('tarif-price');
     days = parseInt(formNewOrderSlider.noUiSlider.get());
 
+    $(REBATE_SELECTOR).html(updateRebateText(days));
     $(TOTAL_SUM_SELECTOR).text(calcOrder() + ' руб');
   });
 })();
