@@ -1,6 +1,8 @@
 window.util = (function () {
   'use strict';
 
+  var $ = window.jQuery;
+
   return {
     setMaxHeight: function (selector) {
       var maxHeight;
@@ -31,5 +33,5 @@ window.util = (function () {
         ];
       };
     }
-  }
+  };
 })();

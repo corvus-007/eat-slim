@@ -1,4 +1,7 @@
 window.newOrder = (function () {
+  'use strict';
+
+  var $ = window.jQuery;
   var formNewOrder = document.querySelector('.form-new-order');
 
   if (!formNewOrder) {
