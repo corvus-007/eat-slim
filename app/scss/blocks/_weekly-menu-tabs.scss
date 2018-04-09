@@ -5,14 +5,14 @@
   margin-bottom: rem(10);
   overflow-x: auto;
   background-color: #ffffff;
-  border-radius: rem(60);
+  border-radius: 60px;
 
   @include mq-min(768px) {
-    margin-bottom: rem(40);
+    margin-bottom: 40px;
   }
 
   @include mq-min(1024px) {
-    margin-bottom: rem(50);
+    margin-bottom: 50px;
   }
 }
 
