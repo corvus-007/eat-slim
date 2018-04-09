@@ -7,13 +7,18 @@ document.addEventListener('DOMContentLoaded', function () {
   var controller = new ScrollMagic.Controller();
   var scene;
 
-  $('.welcome__to-choose-tariff').on('click', function(event) {
+  $('.welcome__to-choose-tariff').on('click', function (event) {
     event.preventDefault();
 
     var targetSection = $(this).attr('href');
     var targetOffset = $(targetSection).offset().top;
 
-    TweenMax.to(window, 1, { scrollTo:{y:targetOffset }, ease: Power3.easeOut } );
+    TweenMax.to(window, 1, {
+      scrollTo: {
+        y: targetOffset
+      },
+      ease: Power3.easeOut
+    });
   });
 
   svg4everybody();
@@ -32,10 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 0.2, '-=0.4')
     .from('.welcome__dish', 0.5, {
       autoAlpha: 0,
-      scale: 0.8,
-      x: -100,
+      scale: 0.9,
+      x: 100,
       ease: Back.easeOut.config(1.4)
-      // rotation: 25
     });
 
 
@@ -66,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       autoAlpha: 0,
       ease: Back.easeOut.config(1.4)
     }, '-=0.3')
-    .staggerFrom('.weekly-menu-tabs__pane:first-of-type .menu-for-day__item', 0.5, {
+    .staggerFrom('.tariff-menu-tabs__pane:first-of-type .weekly-menu-tabs__pane:first-of-type .menu-for-day__item', 0.5, {
       y: 50,
       autoAlpha: 0,
       ease: Back.easeOut.config(1.4)
