@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var controller = new ScrollMagic.Controller();
   var scene;
 
+  $('.welcome__to-choose-tariff').on('click', function(event) {
+    event.preventDefault();
+
+    var targetSection = $(this).attr('href');
+    var targetOffset = $(targetSection).offset().top;
+
+    TweenMax.to(window, 1, { scrollTo:{y:targetOffset }, ease: Power3.easeOut } );
+  });
+
   svg4everybody();
 
   var tlHeader = new TimelineLite();
@@ -29,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // rotation: 25
     });
 
+
   var tlHowIt = new TimelineLite();
   tlHowIt.staggerFrom('.how-it-work__item', 0.8, {
     y: -100,
@@ -42,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .setTween(tlHowIt)
     .addTo(controller);
+
 
   var tlWeeklyMenu = new TimelineLite();
   tlWeeklyMenu
@@ -88,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   scene = new ScrollMagic.Scene({
       triggerElement: '.tariff-plans',
-      // offset: -80,
       reverse: false
     })
     .setTween(tlTariffPlans)
