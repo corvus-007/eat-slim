@@ -1,0 +1,55 @@
+.tariff-menu-tabs {
+
+}
+
+.tariff-menu-tabs__menu {
+  @include clear-list();
+
+  display: flex;
+  margin-bottom: $gutter;
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: rem(60);
+}
+
+.tariff-menu-tabs__item {
+  flex-grow: 1;
+  font-weight: 500;
+  font-size: rem(18);
+  line-height: 1;
+}
+
+.tariff-menu-tabs__link {
+  display: block;
+  padding: rem(13) 4vw;
+  color: $base-color;
+  text-decoration: none;
+  text-align: center;
+  user-select: none;
+  border-radius: 2px;
+  transition: background-color $duration;
+
+  &:hover,
+  &:focus {
+    color: $base-color;
+    background-color: #f7f7f7;
+  }
+
+  .active & {
+    background-color: lighten($accent-color-2, 15%);
+  }
+
+  @include mq-min(568px) {
+    padding-left: rem(25);
+    padding-right: rem(25);
+  }
+}
+
+.tariff-menu-tabs__link-excess {
+  @include mq-max(639px) {
+    @include visuallyhidden();
+  }
+}
+
+.tariff-menu-tabs__pane {
+}
