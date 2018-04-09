@@ -2,14 +2,101 @@ document.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
   var $ = window.jQuery;
+  var POPUP_MODIFY_SHOW_CLASS = 'popup--open';
+  var BODY_POPUP_SHOWED_CLASS = 'is-popup-open';
+  var controller = new ScrollMagic.Controller();
+  var scene;
 
   svg4everybody();
 
+  var tlHeader = new TimelineLite();
+  tlHeader
+    .staggerFrom('.page-header__inner > *', 0.5, {
+      y: -50,
+      autoAlpha: 0,
+      ease: Back.easeOut.config(1.4)
+    }, 0.3, 0.3)
+    .staggerFrom('.welcome__title, .welcome__subtitle, .welcome__text, .welcome__actions', 0.5, {
+      autoAlpha: 0,
+      x: 20,
+      ease: Back.easeOut.config(1.4)
+    }, 0.2, '-=0.4')
+    .from('.welcome__dish', 0.5, {
+      autoAlpha: 0,
+      scale: 0.8,
+      x: -100,
+      ease: Back.easeOut.config(1.4)
+      // rotation: 25
+    });
+
+  var tlHowIt = new TimelineLite();
+  tlHowIt.staggerFrom('.how-it-work__item', 0.8, {
+    y: -100,
+    autoAlpha: 0,
+    ease: Back.easeOut.config(1.4)
+  }, 0.3);
+  scene = new ScrollMagic.Scene({
+      triggerElement: '.how-it-work',
+      offset: -150,
+      reverse: false
+    })
+    .setTween(tlHowIt)
+    .addTo(controller);
+
+  var tlWeeklyMenu = new TimelineLite();
+  tlWeeklyMenu
+    .from('.tariff-menu-tabs__menu', 0.5, {
+      y: 50,
+      autoAlpha: 0,
+      ease: Back.easeOut.config(1.4)
+    })
+    .from('.weekly-menu-tabs__menu', 0.5, {
+      y: 50,
+      autoAlpha: 0,
+      ease: Back.easeOut.config(1.4)
+    }, '-=0.3')
+    .staggerFrom('.weekly-menu-tabs__pane:first-of-type .menu-for-day__item', 0.5, {
+      y: 50,
+      autoAlpha: 0,
+      ease: Back.easeOut.config(1.4)
+    }, 0.2)
+    .from('.menu-for-day__footer', 0.5, {
+      y: 50,
+      autoAlpha: 0,
+      ease: Back.easeOut.config(1.4)
+    });
+  scene = new ScrollMagic.Scene({
+      triggerElement: '.weekly-menu',
+      offset: -150,
+      reverse: false
+    })
+    .setTween(tlWeeklyMenu)
+    .addTo(controller);
+
+
+  var tlTariffPlans = new TimelineLite();
+  tlTariffPlans
+    .staggerFrom('.tariff-plans__item', 0.7, {
+      y: 100,
+      autoAlpha: 0,
+      ease: Back.easeOut.config(1.5)
+    }, 0.3)
+    .from('.tariff-plans__footer', 0.6, {
+      y: 40,
+      autoAlpha: 0,
+      ease: Back.easeOut.config(1.4)
+    });
+  scene = new ScrollMagic.Scene({
+      triggerElement: '.tariff-plans',
+      // offset: -80,
+      reverse: false
+    })
+    .setTween(tlTariffPlans)
+    .addTo(controller);
+
   $('input[type="tel"]').mask('+7 (999) 999-99-99', {});
 
-  var POPUP_MODIFY_SHOW_CLASS = 'popup--open';
-  var BODY_POPUP_SHOWED_CLASS = 'is-popup-open';
-
+  $('.tariff-menu-tabs').tabslet();
   $('.weekly-menu-tabs').tabslet();
 
   if (window.matchMedia("(max-width: 991px)").matches) {
@@ -22,6 +109,11 @@ document.addEventListener('DOMContentLoaded', function () {
       groupCells: '75%'
     });
   }
+
+  $('.reviews-slider').flickity({
+    wrapAround: true,
+    dragThreshold: 10
+  });
 
   function getScrollBarWidth() {
     // создадим элемент с прокруткой
