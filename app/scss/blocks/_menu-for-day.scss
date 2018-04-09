@@ -76,7 +76,6 @@ $menu-for-day-gap: 7px;
   @include clear-list();
 
   display: flex;
-  margin-top: auto;
   border-radius: rem(60);
   overflow: hidden;
 
@@ -113,8 +112,14 @@ $menu-for-day-gap: 7px;
   }
 
   @include mq-range(375px, 413px) {
-    padding-left: rem(5);
-    padding-right: rem(5);
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  @include mq-range(1280px, 1339px) {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: rem(11.5);
   }
 }
 
