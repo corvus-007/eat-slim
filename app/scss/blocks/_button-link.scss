@@ -12,7 +12,7 @@ $dotted-size: 2px;
   text-transform: uppercase;
   cursor: pointer;
   user-select: none;
-
+  text-decoration: none;
   border-bottom: $dotted-size solid transparent;
   background-origin: border-box;
   background-image: linear-gradient(to right, $secondary-color-2 $dotted-size, transparent 0);
