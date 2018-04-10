@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 0.3);
   scene = new ScrollMagic.Scene({
       triggerElement: '.how-it-work',
-      offset: -150,
       reverse: false
     })
     .setTween(tlHowIt)
@@ -82,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   scene = new ScrollMagic.Scene({
       triggerElement: '.weekly-menu',
-      offset: -150,
       reverse: false
     })
     .setTween(tlWeeklyMenu)
