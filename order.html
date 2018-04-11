@@ -46,6 +46,8 @@
         </div>
 
         <a class="page-header__phone page-phone" href="tel:+7 (4832) 424 004">+7 (4832) <span>424 004</span></a>
+
+        <button class="page-header__toggler out-cover-toggler" type="button">Меню</button>
       </div>
     </header>
 
@@ -55,19 +57,12 @@
         <h1 class="page-title">Оформление заказа</h1>
       </div>
       <form class="form-new-order container" action="" method="POST">
-<!--         <div class="form-new-order-tariff">
-          <b class="form-new-order-tariff__name">Тариф Lite</b>
-          <span class="form-new-order-tariff__price">500 руб.</span>
-          <span class="form-new-order-tariff__calories">1200 ккал</span>
-        </div>
-        <div class="tariff-plan tariff-plan--choose-order">
-          <h3 class="tariff-plan__name"><span class="tariff-plan__name-label">Тариф</span> Lite</h3>
-          <span class="tariff-plan__price">500 <span class="tariff-plan__price-currency">руб.</span></span>
-          <span class="tariff-plan__calories">1200 ккал</span>
-        </div> -->
+        <input type="hidden" name="order_days" data-order-role="days-input" value="">
+        <input type="hidden" name="order_total" data-order-role="total-input" value="">
+        <input type="hidden" name="order_rebate" data-order-role="rebate-input" value="">
         <fieldset class="form-section form-section--inverse">
           <legend class="form-section__header">
-            <h2 class="form-section__title">Тариф</h2>
+            <h2 class="form-section__title form-new-order__title">Тариф</h2>
           </legend>
           <div class="radioboxes-list radioboxes-list--has-notice">
             <label class="radioboxes-list__item radiobox">
@@ -78,31 +73,31 @@
               </span>
             </label>
             <label class="radioboxes-list__item radiobox">
-              <input class="radiobox__input" type="radio" name="order_tariff" value="lite-plus" data-order-role="control" data-tarif-price="550">
+              <input class="radiobox__input" type="radio" name="order_tariff" value="lite-2" data-order-role="control" data-tarif-price="550">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">Lite+</span>
+                <span class="radiobox__note">550 руб. (1300 ккал)</span>
               </span>
-              <span class="radiobox__note">550 руб. (1300 ккал)</span>
             </label>
             <label class="radioboxes-list__item radiobox">
               <input class="radiobox__input" type="radio" name="order_tariff" value="fitness" data-order-role="control" data-tarif-price="600">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">Fitness</span>
+                <span class="radiobox__note">600 руб. (1400 ккал)</span>
               </span>
-              <span class="radiobox__note">600 руб. (1400 ккал)</span>
             </label>
             <label class="radioboxes-list__item radiobox">
-              <input class="radiobox__input" type="radio" name="order_tariff" value="fitness-plus" data-order-role="control" data-tarif-price="650">
+              <input class="radiobox__input" type="radio" name="order_tariff" value="fitness-2" data-order-role="control" data-tarif-price="650">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">Fitness+</span>
+                <span class="radiobox__note">650 руб. (1500 ккал)</span>
               </span>
-              <span class="radiobox__note">650 руб. (1500 ккал)</span>
             </label>
           </div>
         </fieldset>
         <fieldset class="form-section">
           <legend class="form-section__header">
-            <h2 class="form-section__title">Ваши данные</h2>
+            <h2 class="form-section__title form-new-order__title">Ваши данные</h2>
           </legend>
           <div class="fields-list form-new-order__person-list">
           <label class="fields-list__item form-new-order__person-item form-field">
@@ -122,7 +117,7 @@
             <div class="form-field__control">
               <div class="radioboxes-list">
                 <label class="radioboxes-list__item radiobox">
-                  <input class="radiobox__input" type="radio" name="gender" value="male" checked>
+                  <input class="radiobox__input" type="radio" name="gender" value="мужской" checked>
                   <span class="radiobox__indicator">
                     <svg class="radiobox__icon" width="25" height="25">
                       <use xlink:href="images/symbols.svg#male-avatar-circle"></use>
@@ -131,7 +126,7 @@
                   </span>
                 </label>
                 <label class="radioboxes-list__item radiobox">
-                  <input class="radiobox__input" type="radio" name="gender" value="female">
+                  <input class="radiobox__input" type="radio" name="gender" value="женский">
                   <span class="radiobox__indicator">
                     <svg class="radiobox__icon" width="25" height="25">
                       <use xlink:href="images/symbols.svg#people"></use>
@@ -146,7 +141,7 @@
         </fieldset>
         <fieldset class="form-section">
           <legend class="form-section__header">
-            <h2 class="form-section__title">Доставка</h2>
+            <h2 class="form-section__title form-new-order__title">Доставка</h2>
           </legend>
           <label class="form-field">
             <span class="form-field__text form-field__text--required">Адрес</span>
@@ -163,12 +158,12 @@
         </fieldset>
         <fieldset class="form-section">
           <legend class="form-section__header">
-            <h2 class="form-section__title">Выбор оплаты</h2>
+            <h2 class="form-section__title form-new-order__title">Выбор оплаты</h2>
           </legend>
           <div class="form-new-order__pay-columns">
             <div class="form-new-order__pay-columns-item radioboxes-list radioboxes-list--fit-content">
               <label class="radioboxes-list__item radiobox">
-                <input class="radiobox__input" type="radio" name="pay" value="online" checked>
+                <input class="radiobox__input" type="radio" name="pay" value="онлайн оплата" checked>
                 <span class="radiobox__indicator">
                   <svg class="radiobox__icon" width="25" height="25">
                     <use xlink:href="images/symbols.svg#male-avatar-circle"></use>
@@ -177,7 +172,7 @@
                 </span>
               </label>
               <label class="radioboxes-list__item radiobox">
-                <input class="radiobox__input" type="radio" name="pay" value="cash">
+                <input class="radiobox__input" type="radio" name="pay" value="курьеру">
                 <span class="radiobox__indicator">
                   <svg class="radiobox__icon" width="25" height="25">
                     <use xlink:href="images/symbols.svg#people"></use>
@@ -262,6 +257,56 @@
         </div>
       </div>
     </footer>
+
+    <div class="out-cover">
+      <div class="out-cover__inner">
+        <div class="out-cover__close-wrapper">
+          <button class="out-cover__close" type="button">Закрыть</button>
+        </div>
+        <div class="out-cover__body">
+          <div class="out-cover__main-nav-wrapper">
+            <nav class="main-nav">
+              <ul class="main-nav__list">
+                <li class="active"><a href="index.html">Главная</a></li>
+                <li><a href="order.html">Оформление заказа</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="out-cover__footer container">
+          <div class="out-cover__socials social">
+            <p class="social__text visuallyhidden">Всегда актуальное меню в наших группах в соц. сетях:</p>
+            <ul class="social__list">
+              <li class="social__item">
+                <a class="social__link" href="">
+                  <svg class="social__icon" width="24" height="24">
+                    <use xlink:href="images/symbols.svg#soc-facebook"></use>
+                  </svg>
+                  <span class="social__caption">ЕшьХудей в Instagram</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="">
+                  <svg class="social__icon" width="24" height="24">
+                    <use xlink:href="images/symbols.svg#soc-vk"></use>
+                  </svg>
+                  <span class="social__caption">ЕшьХудей во Вконтакте</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link" href="">
+                  <svg class="social__icon" width="24" height="24">
+                    <use xlink:href="images/symbols.svg#soc-instagram"></use>
+                  </svg>
+                  <span class="social__caption">ЕшьХудей в Facebook</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </div>
 
