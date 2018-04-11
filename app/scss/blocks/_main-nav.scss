@@ -1,0 +1,87 @@
+.main-nav {
+  display: flex;
+  position: relative;
+  margin-left: auto;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow: auto;
+  background-image: radial-gradient(ellipse at top, rgba(#000, 0.05), transparent 70%), radial-gradient(ellipse at bottom, rgba(#000, 0.05), transparent 70%);
+  background-size: 100% 0.7rem;
+  background-repeat: no-repeat;
+  background-position: top, bottom;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 0.45rem;
+    background-color: #d7d7d7;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+  }
+
+}
+
+.main-nav__list {
+  @include clear-list();
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+
+  li {
+    flex-shrink: 0;
+    flex-grow: 0;
+    white-space: nowrap;
+  }
+
+  a {
+    display: block;
+    padding: rem(35/2);
+    font-weight: 600;
+    font-size: rem(16);
+    color: $white-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: rem(30);
+
+    @media (max-height: 414px) {
+      font-size: rem(28);
+    }
+
+    @media (max-height: 375px) {
+      font-size: rem(25);
+    }
+
+    @media (max-height: 320px) {
+      font-size: rem(22);
+    }
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+
+  .current-menu-item a,
+  .active a {
+    color: $accent-color-2;
+    cursor: default;
+    pointer-events: none;
+  }
+
+}
+
+
+
+.main-nav__item--active .main-nav__link {
+  cursor: default;
+
+  &:hover,
+  &:focus {
+    color: $base-color;
+  }
+}

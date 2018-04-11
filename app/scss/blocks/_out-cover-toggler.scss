@@ -1,0 +1,33 @@
+.out-cover-toggler {
+  position: relative;
+  width: rem(24);
+  height: rem(20);
+  padding: 0;
+  padding-top: rem(8);
+  padding-bottom: rem(8);
+  color: $white-color;
+  font-size: 0;
+  background-color: currentColor;
+  border: none;
+  background-clip: content-box;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: rem(4);
+    background-color: currentColor;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: rem(16);
+  }
+}
