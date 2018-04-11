@@ -12,10 +12,16 @@ window.newOrder = (function () {
   var TOTAL_SUM_SELECTOR = '[data-order-role="total-sum"]';
   var REBATE_SELECTOR = '[data-order-role="rebate"]';
   var TARIFF_PRICE_SELECTOR = '[data-tarif-price]';
+  var DAYS_INPUT_SELECTOR = '[data-order-role="days-input"]';
+  var TOTAL_SUM_INPUT_SELECTOR = '[data-order-role="total-input"]';
+  var REBATE_INPUT_SELECTOR = '[data-order-role="rebate-input"]';
   var CONTROLS_SELECTOR = '[data-order-role="control"]';
-  var rebate = 10 / 100;
+  var rebatePercent = 10;
+  var rebate = rebatePercent / 100;
   var price = 0;
   var days = 0;
+  var currentTotal = 0;
+  var isRebate = false;
 
   function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -29,9 +35,11 @@ window.newOrder = (function () {
 
   function calcOrder() {
     var result = price * days;
+    isRebate = false;
 
     if (days === 7) {
       result -= rebate * result;
+      isRebate = true;
     }
 
     return result;
@@ -75,16 +83,32 @@ window.newOrder = (function () {
   formNewOrderSlider.noUiSlider.on('update', function (values, handle) {
     price = $(TARIFF_PRICE_SELECTOR).filter(':checked').data('tarif-price');
     days = parseInt(values[handle], 10);
+    currentTotal = calcOrder();
 
     $(REBATE_SELECTOR).html(updateRebateText(days));
-    $(TOTAL_SUM_SELECTOR).html(calcOrder() + ' руб');
+    $(DAYS_INPUT_SELECTOR).val(days);
+    $(TOTAL_SUM_SELECTOR).html(currentTotal + ' руб');
+    $(TOTAL_SUM_INPUT_SELECTOR).val(currentTotal + ' руб');
+    if (isRebate) {
+      $(REBATE_INPUT_SELECTOR).val(rebatePercent + '%');
+    } else {
+      $(REBATE_INPUT_SELECTOR).val('0%');
+    }
   });
 
   $(formNewOrder).on('change input', CONTROLS_SELECTOR, function (event) {
     price = $(TARIFF_PRICE_SELECTOR).filter(':checked').data('tarif-price');
     days = parseInt(formNewOrderSlider.noUiSlider.get());
+    currentTotal = calcOrder();
 
     $(REBATE_SELECTOR).html(updateRebateText(days));
-    $(TOTAL_SUM_SELECTOR).text(calcOrder() + ' руб');
+    $(DAYS_INPUT_SELECTOR).val(days);
+    $(TOTAL_SUM_SELECTOR).html(currentTotal + ' руб');
+    $(TOTAL_SUM_INPUT_SELECTOR).val(currentTotal + ' руб');
+    if (isRebate) {
+      $(REBATE_INPUT_SELECTOR).val(rebatePercent + '%');
+    } else {
+      $(REBATE_INPUT_SELECTOR).val('0%');
+    }
   });
 })();
