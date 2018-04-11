@@ -1,8 +1,8 @@
 .logo__image {
-  width: 100px;
+  // width: 100px;
+    width: 150px;
 
   @include mq-min(375px) {
-    width: 150px;
   }
 
   @include mq-min(768px) {

@@ -38,8 +38,7 @@
 }
 
 .radiobox__indicator {
-  display: flex;
-  align-items: center;
+  display: block;
   padding: rem(15);
   font-weight: 500;
   font-size: rem(19);
@@ -53,9 +52,11 @@
   }
 
   @include mq-min(667px) {
-    font-size: rem(15);
+    display: flex;
+    align-items: center;
     padding-top: rem(10);
     padding-bottom: rem(10);
+    font-size: rem(15);
     border-radius: rem(50);
   }
 }
@@ -78,17 +79,17 @@
 }
 
 .radiobox__note {
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  right: 0;
-  padding: 7px;
+  display: block;
   font-size: rem(12);
   letter-spacing: 0.025em;
   text-align: center;
   pointer-events: none;
 
   @include mq-min(667px) {
+    position: absolute;
+    left: 0;
+    right: 0;
     top: 100%;
+    padding: 7px;
   }
 }

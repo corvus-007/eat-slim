@@ -38,15 +38,29 @@
 }
 
 .page-header__social {
-  @include mq-min(568px) {
+  display: none;
+
+  @include mq-min(640px) {
+    display: block;
     margin-left: auto;
   }
 }
 
 .page-header__phone {
-  margin-top: $gutter;
-  margin-left: auto;
+  display: none;
 
+  @include mq-min(640px) {
+    display: block;
+    margin-top: 0;
+    margin-left: $gutter;
+  }
+
+  @include mq-min(1024px) {
+    margin-left: $gutter * 2;
+  }
+}
+
+.page-header__toggler {
   @include mq-min(568px) {
     margin-top: 0;
     margin-left: $gutter;
