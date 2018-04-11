@@ -3,7 +3,7 @@
     <button class="popup__close" type="button">Закрыть попап</button>
   </div>
   <div class="popup-calculator__body popup__body popup__container">
-    <form class="form-calculator" action="" method="POST">
+    <form class="form-calculator" action="order.html" method="GET">
       <fieldset class="form-section form-section--inverse">
         <legend class="form-section__header">
           <h2 class="form-section__title">Укажите пол</h2>
@@ -98,15 +98,15 @@
               <input class="radiobox__input" type="radio" name="activity" value="1.375" data-calculator-role="control">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">средняя активность</span>
+                <span class="radiobox__note">легкие упражнения 1-3 раза в неделю</span>
               </span>
-              <span class="radiobox__note">легкие упражнения 1-3 раза в неделю</span>
             </label>
             <label class="radioboxes-list__item radioboxes-list-activity__item radiobox radiobox--inverse">
               <input class="radiobox__input" type="radio" name="activity" value="1.4625" data-calculator-role="control">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">повышенная активность</span>
+                <span class="radiobox__note">активные тренировки 3-5 раз в неделю</span>
               </span>
-              <span class="radiobox__note">активные тренировки 3-5 раз в неделю</span>
             </label>
           </div>
           <div class="radioboxes-list radioboxes-list--inverse radioboxes-list-activity radioboxes-list-activity--stub">
@@ -114,23 +114,28 @@
               <input class="radiobox__input" type="radio" name="activity" value="1.550" data-calculator-role="control">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">очень высокая активность</span>
+                <span class="radiobox__note">тяжелые физические нагрузки 6-7 раз в неделю</span>
               </span>
-              <span class="radiobox__note">тяжелые физические нагрузки 6-7 раз в неделю</span>
             </label>
             <label class="radioboxes-list__item radioboxes-list-activity__item radiobox radiobox--inverse">
               <input class="radiobox__input" type="radio" name="activity" value="1.6375" data-calculator-role="control">
               <span class="radiobox__indicator">
                 <span class="radiobox__text">экстремальная активность</span>
+                <span class="radiobox__note">занятия интенсивным тренингом 2 раза в день</span>
               </span>
-              <span class="radiobox__note">занятия интенсивным тренингом 2 раза в день</span>
             </label>
           </div>
         </div>
       </fieldset>
       <div class="form-calculator__output">
-        <span class="form-calculator__output-text">Ваша дневная норма калорий</span>
-        <span class="form-calculator__output-value" data-calculator-role="output"></span>
-        ккал/день
+        <div class="form-calculator__output-item">
+          <span class="form-calculator__output-text">Ваша дневная норма калорий: </span>
+          <span class="form-calculator__output-value" data-calculator-role="output-calories"></span> ккал/день
+        </div>
+        <div class="form-calculator__output-item">
+          <span class="form-calculator__output-text">Рекомендуемый тариф: </span>
+          <span class="form-calculator__output-value" data-calculator-role="output-tariff"></span>
+        </div>
       </div>
       <div class="form-calculator__submit-wrapper">
         <button class="form-calculator__submit landing-button-action" type="submit"><span class="landing-button-action__text">Заказать</span></button>
