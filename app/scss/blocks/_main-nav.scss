@@ -47,6 +47,7 @@
     text-decoration: none;
     padding: 0.5rem;
     font-size: rem(30);
+    transition: $duration;
 
     @media (max-height: 414px) {
       font-size: rem(28);
@@ -72,10 +73,7 @@
     cursor: default;
     pointer-events: none;
   }
-
 }
-
-
 
 .main-nav__item--active .main-nav__link {
   cursor: default;

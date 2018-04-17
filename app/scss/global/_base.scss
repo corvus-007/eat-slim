@@ -19,6 +19,15 @@ html {
   }
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 4px;
+}
+
 body {
   height: 100%;
   margin: 0;
@@ -29,12 +38,12 @@ body {
   line-height: 1.4;
   background-color: #eef1ef;
   color: $base-color;
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  &.is-popup-open {
-    // overflow-y: hidden;
-    // padding-right: 18px;
+  &.fancybox-active {
+    height: 100%;
   }
 }
 

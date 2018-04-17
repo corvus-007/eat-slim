@@ -12,6 +12,13 @@
   background-clip: content-box;
   box-sizing: border-box;
   cursor: pointer;
+  opacity: 0.8;
+  transition: opacity $duration;
+
+  &:hover,
+  &:focus {
+    opacity: 1 !important;
+  }
 
   &::before,
   &::after {

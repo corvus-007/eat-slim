@@ -9,7 +9,7 @@
   transform-origin: 0 50%;
   transform: translateX(100%);
   color: $base-color;
-  background-color: $secondary-color;
+  background-color: #333644;
   transition: transform 0.4s ease, visibility 0s $duration;
   pointer-events: none;
   box-sizing: border-box;
@@ -92,6 +92,11 @@
   flex-shrink: 0;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.out-cover__phone-wrapper {
+  margin-bottom: $gutter * 1.5;
+  text-align: center;
 }
 
 .out-cover__socials {

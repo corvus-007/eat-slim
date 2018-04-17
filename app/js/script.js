@@ -2,10 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
   var $ = window.jQuery;
-  var POPUP_MODIFY_SHOW_CLASS = 'popup--open';
-  var BODY_POPUP_SHOWED_CLASS = 'is-popup-open';
+  var POPUP_MODIFY_SHOW_CLASS = 'popup-calculator--open';
   var controller = new ScrollMagic.Controller();
   var scene;
+
+  $.fancybox.defaults.animationEffect = 'zoom-in-out';
 
   $('.welcome__to-choose-tariff').on('click', function (event) {
     event.preventDefault();
@@ -129,9 +130,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function showPopup(popupSelector) {
     var popup = document.querySelector(popupSelector);
-    var popupClose = popup.querySelector('.popup__close');
+    var popupClose = popup.querySelector('.popup-calculator__close');
 
-    // document.body.classList.add(BODY_POPUP_SHOWED_CLASS);
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = window.util.getScrollbarWidth() + 'px';
     popup.classList.add(POPUP_MODIFY_SHOW_CLASS);
@@ -145,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function closePopup(popupSelector) {
     var popup = document.querySelector(popupSelector);
 
-    // document.body.classList.remove(BODY_POPUP_SHOWED_CLASS);
     document.body.style.overflow = '';
     document.body.style.paddingRight = '';
     popup.classList.remove(POPUP_MODIFY_SHOW_CLASS);

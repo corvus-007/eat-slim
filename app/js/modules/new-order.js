@@ -16,8 +16,12 @@ window.newOrder = (function () {
   var TOTAL_SUM_INPUT_SELECTOR = '[data-order-role="total-input"]';
   var REBATE_INPUT_SELECTOR = '[data-order-role="rebate-input"]';
   var CONTROLS_SELECTOR = '[data-order-role="control"]';
-  var rebatePercent = 10;
-  var rebate = rebatePercent / 100;
+  var rebates = {
+    "10": 10 / 100,
+    "15": 15 / 100
+  };
+  var rebatePercent = 0;
+  var rebate = 10 / 100;
   var price = 0;
   var days = 0;
   var currentTotal = 0;
@@ -37,9 +41,14 @@ window.newOrder = (function () {
     var result = price * days;
     isRebate = false;
 
-    if (days === 7) {
+    if (days >= 30) {
+      result -= rebates['10'] * result;
+      isRebate = true;
+      rebatePercent = 15;
+    } else if (days >= 7) {
       result -= rebate * result;
       isRebate = true;
+      rebatePercent = 10;
     }
 
     return result;
@@ -48,7 +57,9 @@ window.newOrder = (function () {
   function updateRebateText(days) {
     var text = 'Без скидки';
 
-    if (days === 7) {
+    if (days >= 30) {
+      text = 'Cкидка <b>15%</b>';
+    } else if (days >= 7) {
       text = 'Cкидка <b>10%</b>';
     }
 
@@ -63,25 +74,73 @@ window.newOrder = (function () {
 
   noUiSlider.create(formNewOrderSlider, {
     start: 2,
-    behaviour: 'snap',
+    // behaviour: 'snap',
     connect: [true, false],
-    // tooltips: true,
-    padding: [1, 0],
+    tooltips: true,
     step: 1,
     range: {
-      'min': [1],
-      'max': [7, 1]
+      'min': 1,
+      'max': 31
     },
     pips: {
       mode: 'values',
-      values: [2, 3, 4, 5, 6, 7],
-      density: 100 / 7,
-      stepped: true
+      // values: 8,
+      values: [1, 2, 3, 4, 5, 7, 14, 21, 31],
+      density: 100 / 31,
+      stepped: true,
+      format: {
+        to: function (value) {
+          var roundValue = Math.round(value);
+          switch (roundValue) {
+            case 7:
+              return '1 неделя';
+            case 14:
+              return '2 недели';
+            case 21:
+              return '3 недели';
+            case 31:
+              return '1 месяц';
+            default:
+              return roundValue;
+          }
+        }
+      }
+    },
+    format: {
+      to: function (value) {
+        var roundValue = Math.round(value);
+        // switch (roundValue) {
+        //   case 7:
+        //     return '1 неделя';
+        //   case 14:
+        //     return '2 недели';
+        //   case 21:
+        //     return '3 недели';
+        //   default:
+        // }
+        return roundValue;
+      },
+      from: function (value) {
+        var roundValue = Math.round(value);
+        switch (roundValue) {
+          case 7:
+            return '1 неделя';
+          case 14:
+            return '2 недели';
+          case 21:
+            return '3 недели';
+          case 31:
+            return '1 месяц';
+          default:
+        }
+        return roundValue;
+      }
     }
   });
 
   formNewOrderSlider.noUiSlider.on('update', function (values, handle) {
     price = $(TARIFF_PRICE_SELECTOR).filter(':checked').data('tarif-price');
+    // debugger;
     days = parseInt(values[handle], 10);
     currentTotal = calcOrder();
 

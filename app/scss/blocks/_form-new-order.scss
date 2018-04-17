@@ -21,8 +21,8 @@
 }
 
 .form-new-order__slider {
-  margin-top: rem($gutter / 2);
-  margin-bottom: $gutter * 2.5;
+  margin-top: rem($gutter / 1);
+  margin-bottom: $gutter * 3;
 
   @include mq-max(639px) {
     margin-left: $gutter / 2;

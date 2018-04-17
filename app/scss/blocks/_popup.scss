@@ -1,68 +1,17 @@
 .popup {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  z-index: 10;
-  background-color: rgba(#000000, 0.95);
-  opacity: 0;
-  transform: scale(1.5);
-  visibility: hidden;
-  pointer-events: none;
-  transition: transform, opacity, visibility;
-  transition-delay: 0s, 0s, $duration * 2;
-  transition-duration: $duration * 2;
-
-  &--open {
-    transform: scale(1);
-    pointer-events: auto;
-    transition-delay: 0s;
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.popup__container {
-  @include make-container();
-
-  position: relative;
-}
-
-.popup__close {
-  position: absolute;
-  top: $gutter * 3;
-  right: $gutter;
-  z-index: 1;
-  width: 28px;
-  height: 28px;
-  font-size: 0;
-  line-height: 0;
-  background: none;
-  border: none;
+  width: calc(100% - #{($gutter / 2)});
+  max-width: rem(400);
+  padding: ($gutter * 2);
   color: #ffffff;
-  user-select: none;
-  cursor: pointer;
+  background-color: rgba(#000000, 0.72);
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    height: 4px;
-    background-color: currentColor;
+  .fancybox-close-small {
+    padding: 0;
+    color: #ffffff;
   }
 
-  &::before {
-    transform: translateY(-50%) rotate(-45deg) scaleX(1.2);
-  }
-
-  &::after {
-    transform: translateY(-50%) rotate(45deg) scaleX(1.2);
+  @include mq-min(768px) {
+    padding: ($gutter * 3);
   }
 }
 
@@ -72,11 +21,7 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.65rem;
-}
-
-.popup__body {
-  padding-top: $gutter * 4;
-  padding-bottom: $gutter * 4;
+  line-height: 1.2;
 }

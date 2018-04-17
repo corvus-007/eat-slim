@@ -1,3 +1,12 @@
+.form-submit-wrapper {
+  margin-top: $gutter * 2;
+  text-align: center;
+}
+
+.form-submit {
+  min-width: 250px;
+}
+
 .wpcf7-form {
   p:empty,
   br {

@@ -190,3 +190,11 @@
 .welcome__to-calc {
   align-self: center;
 }
+
+.welcome__title,
+.welcome__subtitle,
+.welcome__text,
+.welcome__actions,
+.welcome__dish {
+  visibility: hidden;
+}

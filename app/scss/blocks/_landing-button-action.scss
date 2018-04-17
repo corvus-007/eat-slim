@@ -24,7 +24,7 @@
   transition: background-color $duration;
 
   &::before {
-    content: "";
+    // content: "";
     position: absolute;
     left: -2px;
     top: -2px;

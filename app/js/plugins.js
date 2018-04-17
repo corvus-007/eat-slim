@@ -7,3 +7,4 @@
 //=require plugins/ScrollToPlugin.min.js
 //=require plugins/ScrollMagic.min.js
 //=require plugins/animation.gsap.min.js
+//=require plugins/jquery.fancybox.js
