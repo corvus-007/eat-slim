@@ -112,15 +112,32 @@ document.addEventListener('DOMContentLoaded', function () {
   $('.tariff-menu-tabs').tabslet();
   $('.weekly-menu-tabs').tabslet();
 
-  $('.tariff-menu-set-nav-slider').flickity({
-    pageDots: false
+  // $('.tariff-menu-set-nav-slider').flickity({
+  //   pageDots: false
+  // });
+
+  // $('.tariff-menu-set-slider').flickity({
+  //   asNavFor: '.tariff-menu-set-nav-slider',
+  //   prevNextButtons: false,
+  //   draggable: false,
+  //   pageDots: false
+  // });
+
+  $('.tariff-menu-set-slider').each(function() {
+    var $tariffMenuSetNavSlider = $(this).prev('.tariff-menu-set-nav-slider');
+
+    $tariffMenuSetNavSlider.flickity({
+      pageDots: false
+    });
+
+    $(this).flickity({
+      asNavFor: $tariffMenuSetNavSlider[0],
+      prevNextButtons: false,
+      draggable: false,
+      pageDots: false
+    });
   });
-  $('.tariff-menu-set-slider').flickity({
-    asNavFor: '.tariff-menu-set-nav-slider',
-    prevNextButtons: false,
-    draggable: false,
-    pageDots: false
-  });
+
   $('.tariff-menu-tabs').on('_after', function () {
     $('.tariff-menu-set-nav-slider').flickity('resize');
     $('.tariff-menu-set-slider').flickity('resize');
