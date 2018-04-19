@@ -1,0 +1,43 @@
+.tariff-menu-set-nav-slider {
+
+}
+
+.tariff-menu-set-nav-slider__item {
+  width: 33%;
+  margin-left: 5%;
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity $duration * 4;
+
+  &.is-selected {
+    opacity: 1;
+  }
+}
+
+.tariff-menu-set-nav-slider__caption {
+  display: inline-flex;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: $accent-color;
+    transition: $duration * 2;
+
+    .is-selected & {
+      width: 50px;
+      transition-delay: $duration;
+    }
+  }
+
+  &::before {
+    margin-right: 10px;
+  }
+
+  &::after {
+    margin-left: 10px;
+  }
+
+}
