@@ -3226,8 +3226,7 @@ select.form-control {
 }
 
 .tariff-menu-set-nav-slider__item {
-  width: 33%;
-  margin-left: 5%;
+  width: 180px;
   text-align: center;
   opacity: 0.5;
   -webkit-transition: opacity 1.12s;
@@ -3239,25 +3238,32 @@ select.form-control {
 }
 
 .tariff-menu-set-nav-slider__caption {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 220px;
+  margin-left: auto;
+  margin-right: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  white-space: nowrap;
 }
 
 .tariff-menu-set-nav-slider__caption::before, .tariff-menu-set-nav-slider__caption::after {
   content: "";
-  width: 0;
+  opacity: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   height: 2px;
   background-color: #3ab54b;
-  -webkit-transition: 0.56s;
-  transition: 0.56s;
+  -webkit-transition: 0.84s;
+  transition: 0.84s;
 }
 
 .is-selected .tariff-menu-set-nav-slider__caption::before, .is-selected .tariff-menu-set-nav-slider__caption::after {
-  width: 50px;
+  opacity: 1;
   -webkit-transition-delay: 0.28s;
           transition-delay: 0.28s;
 }
@@ -4616,6 +4622,10 @@ select.form-control {
   }
   .weekly-menu-tabs__menu {
     margin-bottom: 50px;
+  }
+  .tariff-menu-set-nav-slider__item {
+    width: 300px;
+    width: 33%;
   }
   .tariff-plan {
     padding-top: 2.77778rem;

@@ -112,17 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
   $('.tariff-menu-tabs').tabslet();
   $('.weekly-menu-tabs').tabslet();
 
-  // $('.tariff-menu-set-nav-slider').flickity({
-  //   pageDots: false
-  // });
-
-  // $('.tariff-menu-set-slider').flickity({
-  //   asNavFor: '.tariff-menu-set-nav-slider',
-  //   prevNextButtons: false,
-  //   draggable: false,
-  //   pageDots: false
-  // });
-
   $('.tariff-menu-set-slider').each(function() {
     var $tariffMenuSetNavSlider = $(this).prev('.tariff-menu-set-nav-slider');
 
