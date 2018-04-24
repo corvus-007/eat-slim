@@ -3,8 +3,7 @@
 }
 
 .tariff-menu-set-nav-slider__item {
-  width: 33%;
-  margin-left: 5%;
+  width: 180px;
   text-align: center;
   opacity: 0.5;
   transition: opacity $duration * 4;
@@ -12,22 +11,31 @@
   &.is-selected {
     opacity: 1;
   }
+
+  @include mq-min(1024px) {
+    width: 33%;
+  }
 }
 
 .tariff-menu-set-nav-slider__caption {
-  display: inline-flex;
+  display: flex;
+  max-width: 220px;
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
+  white-space: nowrap;
 
   &::before,
   &::after {
     content: "";
-    width: 0;
     height: 2px;
+    flex-grow: 1;
     background-color: $accent-color;
-    transition: $duration * 2;
+    opacity: 0;
+    transition: $duration * 3;
 
     .is-selected & {
-      width: 50px;
+      opacity: 1;
       transition-delay: $duration;
     }
   }
@@ -39,5 +47,4 @@
   &::after {
     margin-left: 10px;
   }
-
 }
