@@ -26,19 +26,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var tlHeader = new TimelineLite();
   tlHeader
-    .staggerFrom('.page-header__inner > *', 0.5, {
+    .staggerFrom('.page-header__inner > *', 0.4, {
       y: -50,
       autoAlpha: 0,
       ease: Back.easeOut.config(1.4)
-    }, 0.3, 0.3)
-    .staggerFrom('.welcome__title, .welcome__subtitle, .welcome__text, .welcome__actions', 0.5, {
+    }, 0.2)
+    .staggerFrom('.welcome__title, .welcome__subtitle, .welcome__text, .welcome__actions', 0.4, {
       autoAlpha: 0,
       x: 20,
       ease: Back.easeOut.config(1.4)
     }, 0.2, '-=0.4')
-    .from('.welcome__dish', 0.5, {
+    .from('.welcome__dish', 0.4, {
       autoAlpha: 0,
-      scale: 0.9,
+      scale: 0.85,
       x: 100,
       ease: Back.easeOut.config(1.4)
     });
