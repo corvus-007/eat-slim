@@ -10,10 +10,10 @@ window.newOrder = (function () {
 
   var formNewOrderSlider = formNewOrder.querySelector('#form-new-order-slider');
   var TOTAL_SUM_SELECTOR = '[data-order-role="total-sum"]';
+  var TOTAL_SUM_INPUT_SELECTOR = '[data-order-role="total-input"]';
   var REBATE_SELECTOR = '[data-order-role="rebate"]';
   var TARIFF_PRICE_SELECTOR = '[data-tarif-price]';
   var DAYS_INPUT_SELECTOR = '[data-order-role="days-input"]';
-  var TOTAL_SUM_INPUT_SELECTOR = '[data-order-role="total-input"]';
   var REBATE_INPUT_SELECTOR = '[data-order-role="rebate-input"]';
   var CONTROLS_SELECTOR = '[data-order-role="control"]';
   var rebates = {
@@ -21,11 +21,12 @@ window.newOrder = (function () {
     "15": 15 / 100
   };
   var rebatePercent = 0;
-  var rebate = 10 / 100;
+  // var rebate = 10 / 100;
   var price = 0;
   var days = 0;
   var currentTotal = 0;
   var isRebate = false;
+  var savingMoney = 0;
 
   function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -39,28 +40,27 @@ window.newOrder = (function () {
 
   function calcOrder() {
     var result = price * days;
-    isRebate = false;
+    isRebate = days >= 7;
 
-    if (days >= 30) {
-      result -= rebates['10'] * result;
-      isRebate = true;
-      rebatePercent = 15;
-    } else if (days >= 7) {
-      result -= rebate * result;
-      isRebate = true;
-      rebatePercent = 10;
+    if (isRebate) {
+      if (days >= 30) {
+        rebatePercent = 15;
+      } else if (days >= 7) {
+        rebatePercent = 10;
+      }
+
+      savingMoney = rebates['' + rebatePercent] * result;
+      result -= savingMoney;
     }
 
     return result;
   }
 
   function updateRebateText(days) {
-    var text = 'Без скидки';
+    var text = 'без скидки';
 
-    if (days >= 30) {
-      text = 'Cкидка <b>15%</b>';
-    } else if (days >= 7) {
-      text = 'Cкидка <b>10%</b>';
+    if (days >= 7) {
+      text = 'скидка <b>' + rebatePercent + '%</b>';
     }
 
     return text;
@@ -72,9 +72,24 @@ window.newOrder = (function () {
     history.replaceState({}, null, '?' + this.name + '=' + this.value);
   });
 
+  function convertDaysToWeeks(value) {
+    var roundValue = Math.round(value);
+    switch (roundValue) {
+      case 7:
+        return '1 неделя';
+      case 14:
+        return '2 недели';
+      case 21:
+        return '3 недели';
+      case 31:
+        return '1 месяц';
+      default:
+        return roundValue;
+    }
+  }
+
   noUiSlider.create(formNewOrderSlider, {
     start: 2,
-    // behaviour: 'snap',
     connect: [true, false],
     tooltips: true,
     step: 1,
@@ -84,63 +99,24 @@ window.newOrder = (function () {
     },
     pips: {
       mode: 'values',
-      // values: 8,
       values: [1, 2, 3, 4, 5, 7, 14, 21, 31],
       density: 100 / 31,
       stepped: true,
       format: {
-        to: function (value) {
-          var roundValue = Math.round(value);
-          switch (roundValue) {
-            case 7:
-              return '1 неделя';
-            case 14:
-              return '2 недели';
-            case 21:
-              return '3 недели';
-            case 31:
-              return '1 месяц';
-            default:
-              return roundValue;
-          }
-        }
+        to: convertDaysToWeeks
       }
     },
     format: {
       to: function (value) {
         var roundValue = Math.round(value);
-        // switch (roundValue) {
-        //   case 7:
-        //     return '1 неделя';
-        //   case 14:
-        //     return '2 недели';
-        //   case 21:
-        //     return '3 недели';
-        //   default:
-        // }
         return roundValue;
       },
-      from: function (value) {
-        var roundValue = Math.round(value);
-        switch (roundValue) {
-          case 7:
-            return '1 неделя';
-          case 14:
-            return '2 недели';
-          case 21:
-            return '3 недели';
-          case 31:
-            return '1 месяц';
-          default:
-        }
-        return roundValue;
-      }
+      from: convertDaysToWeeks
     }
   });
 
   formNewOrderSlider.noUiSlider.on('update', function (values, handle) {
     price = $(TARIFF_PRICE_SELECTOR).filter(':checked').data('tarif-price');
-    // debugger;
     days = parseInt(values[handle], 10);
     currentTotal = calcOrder();
 
