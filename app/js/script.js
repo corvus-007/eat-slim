@@ -2,9 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
   var $ = window.jQuery;
+  var WEEKS_COUNT = 3;
   var POPUP_MODIFY_SHOW_CLASS = 'popup-calculator--open';
   var controller = new ScrollMagic.Controller();
   var scene;
+  var weekNumber = window.util.getWeekNumber(new Date())[1];
+  var currentWeek = weekNumber % WEEKS_COUNT;
 
   $.fancybox.defaults.animationEffect = 'zoom-in-out';
 
@@ -70,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
       autoAlpha: 0,
       ease: Back.easeOut.config(1.4)
     }, '-=0.3')
-    .staggerFrom('.tariff-menu-tabs__pane:first-of-type .weekly-menu-tabs__pane:first-of-type .menu-for-day__item', 0.5, {
+    .staggerFrom('.tariff-menu-tabs__pane:first-of-type .tariff-menu-set-slider__item:nth-child(' + (currentWeek + 1) + ') .weekly-menu-tabs__pane:first-of-type .menu-for-day__item', 0.5, {
       y: 50,
       autoAlpha: 0,
       ease: Back.easeOut.config(1.4)
@@ -112,11 +115,20 @@ document.addEventListener('DOMContentLoaded', function () {
   $('.tariff-menu-tabs').tabslet();
   $('.weekly-menu-tabs').tabslet();
 
-  $('.tariff-menu-set-slider').each(function() {
+  $('.tariff-menu-set-nav-slider').each(function () {
+    $(this)
+      .find('.tariff-menu-set-nav-slider__item')
+      .eq(currentWeek)
+      .addClass('tariff-menu-set-nav-slider__item--current-week')
+      .attr('title', 'Текущая неделя');
+  });
+
+  $('.tariff-menu-set-slider').each(function () {
     var $tariffMenuSetNavSlider = $(this).prev('.tariff-menu-set-nav-slider');
 
     $tariffMenuSetNavSlider.flickity({
-      pageDots: false
+      pageDots: false,
+      initialIndex: currentWeek
     });
 
     $(this).flickity({
