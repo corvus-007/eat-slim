@@ -12,6 +12,10 @@
     opacity: 1;
   }
 
+  &--current-week {
+    font-weight: 500;
+  }
+
   @include mq-min(1024px) {
     width: 33%;
   }
