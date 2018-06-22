@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var controller = new ScrollMagic.Controller();
   var scene;
   var weekNumber = window.util.getWeekNumber(new Date())[1];
-  var currentWeek = weekNumber % WEEKS_COUNT;
+  var currentWeek = (weekNumber % WEEKS_COUNT) ? (weekNumber % WEEKS_COUNT) - 1 : WEEKS_COUNT - 1;
 
   $.fancybox.defaults.animationEffect = 'zoom-in-out';
 
