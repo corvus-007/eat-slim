@@ -6,8 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var POPUP_MODIFY_SHOW_CLASS = 'popup-calculator--open';
   var controller = new ScrollMagic.Controller();
   var scene;
-  var weekNumber = window.util.getWeekNumber(new Date())[1];
+  var date = new Date();
+  var day = date.getDay();
+  var time = date.getHours();
+  var weekNumber = window.util.getWeekNumber(date)[1];
   var currentWeek = (weekNumber % WEEKS_COUNT) ? (weekNumber % WEEKS_COUNT) - 1 : WEEKS_COUNT - 1;
+
+  if ((day === 6 && time > 14) || (day === 7)) {
+    currentWeek += 1;
+  }
 
   $.fancybox.defaults.animationEffect = 'zoom-in-out';
 
